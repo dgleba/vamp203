@@ -15,6 +15,10 @@ default_domain="vamp203.local"
 mkdir -p tmp
 tmp="/home/bun/tmp"
 
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/bootstrap203.sh
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/import203.sh
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/django203.sh
+
 clear
 
 # check for root privilege
@@ -99,6 +103,7 @@ sudo ./VBoxLinuxAdditions.run
 
 # check loaded modules
 $ lsmod | grep -io vboxguest
+
 
 
 # remove myself to prevent any unintended changes at a later stage
