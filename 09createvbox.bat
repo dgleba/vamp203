@@ -9,7 +9,9 @@ set vboxm="C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"
 
 ..nic problem..
 :%vboxm% modifyvm %vmname% --memory 768 --cpus 1  --acpi on  --nic1 bridged --bridgeadapter1 wlan0 --vrde on --vrdeport 5555 --clipboard bidirectional
-%vboxm% modifyvm %vmname% --memory 768 --cpus 1  --acpi on   --vrde on --vrdeport 5555 --clipboard bidirectional
+%vboxm% modifyvm %vmname% --memory 768 --cpus 1  --acpi on  --nic1 bridged --bridgeadapter1 eth0  --clipboard bidirectional
+: try %vboxm% modifyvm %vmname%  --nic1 bridged --bridgeadapter1 eth0 
+:%vboxm% modifyvm %vmname% --memory 768 --cpus 1  --acpi on   --vrde on --vrdeport 5555 --clipboard bidirectional
 
 %vboxm% sharedfolder add %vmname% --name %vmname% --hostpath c:/var/vamp203b/ --automount
 mkdir c:\var\vamp203b
