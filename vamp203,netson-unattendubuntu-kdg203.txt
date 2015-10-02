@@ -52,14 +52,14 @@ in vamp198e
 
 md /var/varvamp
 cd /var/varvamp/
-mkdir netson202d
-cd netson202d
-"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" sharedfolder add "netson3" --name netson202 --hostpath c:/var/netson202c/ --automount
-mkdir c:\var\netson202
+mkdir vamp203b
+cd vamp203b
+"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" sharedfolder add "vamp203b" --name vamp203 --hostpath c:/var/vamp203b/ --automount
+mkdir c:\var\vamp203b
 
 rm create-unattended-iso.sh
-wget https://raw.githubusercontent.com/dgleba/ubuntu-unattended/master/create-unattended-iso.sh
-https://github.com/dgleba/ubuntu-unattended/blob/master/create-unattended-iso.sh
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/create-unattended-iso.sh
+#https://github.com/dgleba/vamp203/blob/master/create-unattended-iso.sh
 chmod +x create-unattended-iso.sh
 #  >>>>>>edit it for tmp and iso source
 sudo ./create-unattended-iso.sh
@@ -130,6 +130,16 @@ git add *
 git commit -m "first commit"
 git remote add origin https://github.com/dgleba/vamp203.git
 git push -u origin master
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Title:  .
+-----------------------2015-10-01[Oct-Thu]20-16PM
+
+git config --global user.email "dgleba@gmail.com"
+  git config --global user.name "David Gleba"
+
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
