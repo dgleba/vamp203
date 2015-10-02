@@ -7,7 +7,8 @@ https://github.com/dgleba/vamp203
 I am doing this on a Windows machine with a Vagrant Ubuntu machine running in it.
 
 - Install virtualbox
-- create unattended ubuntu 14.04 server iso ( I used a vagrant Ubuntu VM to create it. vamp198e)
+- create unattended ubuntu 14.04 server iso ( I used a vagrant Ubuntu VM to create it. vamp198e) 
+      See instructions for unattended iso maker below...
 - create virtual box  ( I did this from windows)
 - install the resulting Ubuntu 14.04 64bit server iso in vbox
 - Start vbox ubuntu server, run  ./start.sh
@@ -19,6 +20,8 @@ _____________
 
 
 # Using Unattended Ubuntu ISO Maker
+
+[forked from https://github.com/netson/ubuntu-unattended]
 
 This simple script will create an unattended Ubuntu ISO from start to finish. It will ask you a few questions once, and embed your answers into a remastered ISO file for you to use over and over again.
 
