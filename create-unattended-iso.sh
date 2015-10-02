@@ -108,6 +108,7 @@ if [[ ! -f $tmp/$seed_file ]]; then
     #download "https://github.com/netson/ubuntu-unattended/raw/master/$seed_file"
     #download "https://raw.githubusercontent.com/dgleba/vamp203/master/$seed_file"
     download "https://github.com/dgleba/vamp203/raw/master/$seed_file"
+	download "https://github.com/dgleba/vamp203/raw/master/start.sh"
 fi
 
 # install required packages
