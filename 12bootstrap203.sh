@@ -2,7 +2,7 @@
 
 date
 
-source /home/vagrant/configv1.sh
+source ./configv1.sh
 
 #PROJECTFOLDER='project'
 
@@ -67,8 +67,8 @@ sudo apt-get -y install mc
 
 
 # comment these out to just run this manually after boot. just need it once. renamed to import198.sh
-/home/vagrant/import198.sh
-/home/vagrant/django198.sh
+/import198.sh
+/django198.sh
 #
 date
 #

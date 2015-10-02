@@ -36,8 +36,17 @@ no...
 
 :%vboxm% sharedfolder add %vmname% --name %vmname% --hostpath c:/var/vamp203b/ --automount
 %vboxm% sharedfolder remove %vmname% --name %vmname%  
-%vboxm% sharedfolder add %vmname% --name %vmname% --hostpath c:/var/vamp203b/ 
-mkdir c:\var\vamp203b
+%vboxm% sharedfolder add %vmname% --name vamp203 --hostpath c:/var/vamp203/ 
+: for /var/www/html ...
+%vboxm% sharedfolder add %vmname% --name html --hostpath c:/p2/vamp/htdocs 
+mkdir c:\var\vamp203
+
+mkdir share203
+:sudo mount -t vboxsf -o uid=$UID,gid=$(id -g) vamp203 ~/share203
+:sudo mount -t vboxsf  vamp203 ~/share203
+
+:sudo mount -t vboxsf  html /var/www/html
+
 
 cd \temp
 mkdir "C:\Users\%USERNAME%\VirtualBox VMs\%vmname%\"
@@ -68,8 +77,5 @@ mkdir "C:\Users\%USERNAME%\VirtualBox VMs\%vmname%\"
 
 %vboxm% export %vmname% --manifest
 
-mkdir share203b
-:sudo mount -t vboxsf -o uid=$UID,gid=$(id -g) vamp203b ~/share203b
-:sudo mount -t vboxsf  vamp203b ~/share203b
 
 pause
