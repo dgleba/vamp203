@@ -4,7 +4,8 @@
 
 #David Gleba 2015-10-01_Thu_12.11-PM using vamp198e
 #
-tmp="/var/files"  # destination folder to store the final iso file
+# this must sync with vagrant..
+tmp="/var/varvamp/files"  # destination folder to store the final iso file
 hostname="ubuntu"
 
 # define spinner function for slow tasks
