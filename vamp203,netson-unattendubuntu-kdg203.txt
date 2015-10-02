@@ -24,7 +24,7 @@ create virtual box  in windows?
 create shared folders for /var/vamp/htdocs > /var/www/html
 create shared folders for /var/vamp203 > ?
 
-6 min
+7 min
 install server iso in vbox
 
 6 min
