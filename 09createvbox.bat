@@ -35,11 +35,12 @@ no...
 :shared folders...
 
 :%vboxm% sharedfolder add %vmname% --name %vmname% --hostpath c:/var/vamp203b/ --automount
-%vboxm% sharedfolder remove %vmname% --name %vmname%  
+%vboxm% sharedfolder remove %vmname% --name vamp203 
+mkdir c:\var\vamp203
 %vboxm% sharedfolder add %vmname% --name vamp203 --hostpath c:/var/vamp203/ 
 : for /var/www/html ...
 %vboxm% sharedfolder add %vmname% --name html --hostpath c:/p2/vamp/htdocs 
-mkdir c:\var\vamp203
+
 
 :mkdir share203
 :sudo mount -t vboxsf -o uid=$UID,gid=$(id -g) vamp203 ~/share203

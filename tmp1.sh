@@ -6,7 +6,7 @@ set -x
 mkdir share203
 #sudo mount -t vboxsf -o uid=$UID,gid=$(id -g) vamp203 ~/share203
 sudo mount -t vboxsf  vamp203 ~/share203
-sudo mkdir /var/www/html
+sudo mkdir -p /var/www/html
 sudo mount -t vboxsf  html /var/www/html
 
 
