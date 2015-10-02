@@ -9,17 +9,17 @@ I am doing this on a Windows machine with a Vagrant Ubuntu machine running in it
 - Install virtualbox
 - create unattended ubuntu 14.04 server iso ( I used a vagrant Ubuntu VM to create it. vamp198e) 
       See instructions for unattended iso maker below...
-- create virtual box  ( I did this from windows)
-- install the resulting Ubuntu 14.04 64bit server iso in vbox
+      I used 03prep-iso.sh
+- create virtual box  ( I did this from windows) 09createvbox.bat
+- install the resulting Ubuntu 14.04 64bit server iso in vbox (just press enter when it starts.)
 - Start vbox ubuntu server, run  ./start.sh
 - run ./bootstrap203.sh which runs import203.sh and django203.sh
-- visit in browser ipaddr/menu
+- visit in browser [ip-address]/menu
 
 _____________
 
 
-
-# Using Unattended Ubuntu ISO Maker
+### Using Unattended Ubuntu ISO Maker
 
 [forked from https://github.com/netson/ubuntu-unattended]
 
@@ -141,7 +141,7 @@ If you run into any issues, please create an issue; I am by no means a shell/bas
 ## License
 MIT
 
-See credits.txt.
+See credits.txt  
 
-David Gleba
-https://github.com/dgleba/vamp203
+David Gleba  
+https://github.com/dgleba/vamp203  
