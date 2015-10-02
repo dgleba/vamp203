@@ -1,5 +1,24 @@
-# vamp203
-# vbox server using Unattended Ubuntu ISO Maker
+# Virtualbox Server - Ubuntu Apache MySQL PHP Python Django
+
+https://github.com/dgleba/vamp203
+
+##General Usage Flow
+
+I am doing this on a Windows machine with a Vagrant Ubuntu machine running in it.
+
+- Install virtualbox
+- create unattended ubuntu 14.04 server iso ( I used a vagrant Ubuntu VM to create it. vamp198e)
+- create virtual box  ( I did this from windows)
+- install the resulting Ubuntu 14.04 64bit server iso in vbox
+- Start vbox ubuntu server, run  ./start.sh
+- run ./bootstrap203.sh which runs import203.sh and django203.sh
+- visit in browser ipaddr/menu
+
+_____________
+
+
+
+# Using Unattended Ubuntu ISO Maker
 
 This simple script will create an unattended Ubuntu ISO from start to finish. It will ask you a few questions once, and embed your answers into a remastered ISO file for you to use over and over again.
 
@@ -118,3 +137,8 @@ If you run into any issues, please create an issue; I am by no means a shell/bas
 
 ## License
 MIT
+
+See credits.txt.
+
+David Gleba
+https://github.com/dgleba/vamp203
