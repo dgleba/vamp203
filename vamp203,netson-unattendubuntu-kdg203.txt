@@ -1,0 +1,135 @@
+
+note:
+have to press ctrl-alt-f1
+to get login.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Title:  .
+-----------------------2015-10-01[Oct-Thu]10-18AM
+
+in vamp198e
+start vm
+ssh into it
+
+I am using windows for this.
+
+5 min
+install virtualbox
+
+10 min
+create unattended ubuntu 14.04 server iso
+
+1 min
+create virtual box
+
+6 min
+install server iso in vbox
+
+6 min
+in the vbox ubuntu server, ./start.sh
+
+2 min
+in windows?
+create shared folders for /var/vamp/htdocs > /var/www/html
+create shared folders for /var/vamp203 > ?
+
+4 min
+./bootstrap203.sh 
+    bootstrap runs import203.sh django203.sh
+
+visit in browser ipaddr/menu
+
+
+_____________
+
+
+https://github.com/netson/ubuntu-unattended
+
+https://github.com/dgleba/ubuntu-unattended
+
+in vamp198e
+
+
+md /var/varvamp
+cd /var/varvamp/
+mkdir netson202d
+cd netson202d
+"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" sharedfolder add "netson3" --name netson202 --hostpath c:/var/netson202c/ --automount
+mkdir c:\var\netson202
+
+rm create-unattended-iso.sh
+wget https://raw.githubusercontent.com/dgleba/ubuntu-unattended/master/create-unattended-iso.sh
+https://github.com/dgleba/ubuntu-unattended/blob/master/create-unattended-iso.sh
+chmod +x create-unattended-iso.sh
+#  >>>>>>edit it for tmp and iso source
+sudo ./create-unattended-iso.sh
+ 
+ 
+_____________
+ 
+ 
+america/detroit
+ 
+netson netson  a
+ 
+_____________
+
+
+cd /var/varvamp/
+mkdir netson2
+cd netson2
+
+
+_____________
+
+no suitable module for running kernel found ubuntu 14.04 server
+
+https://mylinuxramblings.wordpress.com/2014/12/06/how-to-install-virtualbox-guest-editions-in-ubuntu-server-14-04/
+
+
+Install required packages:  sudo apt-get install build-essential module-assistant
+Configure your system for building kernel modules:  sudo m-a prepare
+Click on Install Guest Additions… from the Devices menu
+
+C:\Program Files\Oracle\VirtualBox\VBoxGuestAdditions.iso
+
+Mount the virtual CD Rom: sudo mount /dev/cdrom /media/cdrom 
+Change directory to the virtual CD Rom Drive: cd /media/cdrom
+Install Guest Editions: sudo ./VBoxLinuxAdditions.run
+Restart VM by entering: sudo reboot
+To check that Guest Editions are installed: lsmod | grep vboxguest
+
+C:\Program Files\Oracle\VirtualBox\VBoxGuestAdditions.iso
+
+_____________
+
+may be unattended...
+http://sharadchhetri.com/2014/10/07/ubuntu-14-04-install-virtualbox-guest-additions-also-create-videos/
+
+cd /tmp
+wget http://download.virtualbox.org/virtualbox/4.3.8/VBoxGuestAdditions_4.3.8.iso
+sudo apt-get install dkms gcc 
+sudo mount -o loop VBoxGuestAdditions_4.3.8.iso /mnt
+cd /mnt
+sudo ./VBoxLinuxAdditions.run
+_____________
+
+
+
+vboxmanage sharedfolder add "io" --name share-name --hostpath /path/to/folder/ --automount
+vboxmanage sharedfolder remove "io" --name share-name
+
+vboxmanage sharedfolder add "netson3" --name netson202c --hostpath /var/netson202c/ --automount
+
+
+_____________
+
+echo # vamp203 >> README.md
+git init
+git add *
+git commit -m "first commit"
+git remote add origin https://github.com/dgleba/vamp203.git
+git push -u origin master
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
