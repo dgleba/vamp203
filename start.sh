@@ -15,9 +15,9 @@ default_domain="vamp203.local"
 mkdir -p tmp
 tmp="/home/bun/tmp"
 
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/bootstrap203.sh
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/import203.sh
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/django203.sh
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/12bootstrap203.sh
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/15import203.sh
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/18django203.sh
 
 clear
 
