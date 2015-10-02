@@ -41,10 +41,10 @@ no...
 %vboxm% sharedfolder add %vmname% --name html --hostpath c:/p2/vamp/htdocs 
 mkdir c:\var\vamp203
 
-mkdir share203
+:mkdir share203
 :sudo mount -t vboxsf -o uid=$UID,gid=$(id -g) vamp203 ~/share203
 :sudo mount -t vboxsf  vamp203 ~/share203
-
+:mkdir /var/www/html
 :sudo mount -t vboxsf  html /var/www/html
 
 
