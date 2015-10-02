@@ -6,13 +6,13 @@ set -e
 
 # set defaults
 #
-mkdir vamp203b
+mkdir -p vamp203b
 #default_hostname="$(hostname)"
 default_hostname="vamp203"
 default_domain="vamp203.local"
 #default_puppetmaster="foreman.netson.nl"
 
-mkdir tmp
+mkdir -p tmp
 tmp="/home/bun/tmp"
 
 clear
