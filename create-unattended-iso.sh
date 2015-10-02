@@ -101,9 +101,11 @@ fi
 
 # download netson seed file
 seed_file="netson.seed"
+#rm $tmp/$seed_file
 if [[ ! -f $tmp/$seed_file ]]; then
     echo -h " downloading $seed_file: "
-    download "https://github.com/dgleba/vamp203/blob/master/$seed_file"
+    #download "https://github.com/dgleba/vamp203/blob/master/netson.seed"
+    download "https://raw.githubusercontent.com/dgleba/vamp203/master/$seed_file"
 fi
 
 # install required packages
