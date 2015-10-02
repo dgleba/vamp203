@@ -27,10 +27,13 @@ no...
 : mine on toshiba s55t --   Intel(R) Dual Band Wireless-AC 3160 #2
 :eg:  vboxmanage modifyvm your-vm-name-here --nic1 bridged --bridgeadapter1 "Intel(R) Ethernet Connection I217-V"
 :worked..
-%vboxm% modifyvm %vmname%  --nic1 bridged --bridgeadapter1 "Intel(R) Dual Band Wireless-AC 3160 #2"
+%vboxm% modifyvm %vmname%  --nic1 bridged --bridgeadapter1 "Intel(R) Dual Band Wireless-AC 3160 #2" 
+:try --nictype1 virtio
+%vboxm% modifyvm %vmname%  --nic1 bridged --bridgeadapter1 "Intel(R) Dual Band Wireless-AC 3160 #2" --nictype1 virtio
 
 :shared folders...
-%vboxm% sharedfolder add %vmname% --name %vmname% --hostpath c:/var/vamp203b/ --automount
+:%vboxm% sharedfolder add %vmname% --name %vmname% --hostpath c:/var/vamp203b/ --automount
+%vboxm% sharedfolder add %vmname% --name %vmname% --hostpath c:/var/vamp203b/ 
 mkdir c:\var\vamp203b
 
 cd \temp
@@ -57,5 +60,8 @@ mkdir "C:\Users\%USERNAME%\VirtualBox VMs\%vmname%\"
 :%vboxm% import -n C:\0\ubuntu201.ova
 
 :for now... setup the network in gui..........
+
+%vboxm% export %vmname% --manifest
+
 
 pause

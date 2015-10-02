@@ -6,7 +6,7 @@ set -e
 
 # set defaults
 #
-mkdir -p vamp203b
+mkdir -p _this-vamp203b
 #default_hostname="$(hostname)"
 default_hostname="vamp203"
 default_domain="vamp203.local"
