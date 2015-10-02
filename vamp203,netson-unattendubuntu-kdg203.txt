@@ -106,8 +106,6 @@ no...
 set network in gui..........
 
 
-
-
 ==
 
 #VBoxManage modifyvm vamp203b --memory 768 --cpus 1 --pae on --acpi on --hpet on --ioapic on --hwvirtex on --hwvirtexexcl on --vtxvpid on --accelerate3d off --audio none --chipset ich9 --nic1 bridged --bridgeadapter1 wlan0 --nictype1 82543GC --vrde on --vrdeport 5555 --clipboard bidirectional

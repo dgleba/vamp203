@@ -103,7 +103,7 @@ fi
 seed_file="netson.seed"
 if [[ ! -f $tmp/$seed_file ]]; then
     echo -h " downloading $seed_file: "
-    download "https://github.com/dgleba/ubuntu-unattended/blob/master/$seed_file"
+    download "https://github.com/dgleba/vamp203/blob/master/$seed_file"
 fi
 
 # install required packages
