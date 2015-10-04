@@ -6,6 +6,7 @@ https://github.com/dgleba/vamp203
 
 I am doing this on a Windows machine with a Vagrant Ubuntu machine running in it.
 
+- see preparation below.
 - Install virtualbox
 - create unattended ubuntu 14.04 server iso ( I used a vagrant Ubuntu VM to create it. vamp198e) 
       See instructions for unattended iso maker below...
@@ -14,8 +15,16 @@ I am doing this on a Windows machine with a Vagrant Ubuntu machine running in it
 - install the resulting Ubuntu 14.04 64bit server iso in vbox (just press enter when it starts.)
 - Start vbox ubuntu server, run  ./start.sh
 - run ./bootstrap203.sh which runs import203.sh and django203.sh
-- visit in browser [ip-address]/menu
+- visit in your browser: [ip-address]/menu
 
+
+## Preparation
+
+- put a copy of your served web root files in c:\p2\vamp\htdocs
+    say for example c:\p2\vamp\htdocs\menu\index.html
+- edit configv1.sh with your passwords. You look at configv1.sh.example.
+  
+  
 _____________
 
 

@@ -3,8 +3,8 @@ set -e
 
 md /var/varvamp
 cd /var/varvamp
-mkdir vamp203b
-cd vamp203b
+mkdir vamp203c
+cd vamp203c
 
 rm create-unattended-iso.sh
 wget https://raw.githubusercontent.com/dgleba/vamp203/master/create-unattended-iso.sh

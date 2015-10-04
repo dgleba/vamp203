@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 date
+set -x
 
-source ./configv1.sh
+source ~/configv1.sh
 
 #PROJECTFOLDER='project'
 
@@ -75,8 +76,8 @@ sudo mkdir -p /var/www/html
 sudo mount -t vboxsf  html /var/www/html
 
 # comment these out to just run this manually after boot. just need it once. renamed to import198.sh
-/import198.sh
-/django198.sh
+#./import198.sh
+#./django198.sh
 #
 date
 #

@@ -103,7 +103,7 @@ sudo ./VBoxLinuxAdditions.run
 
 # check loaded modules
 $ lsmod | grep -io vboxguest
-
+sleep 11
 
 
 # remove myself to prevent any unintended changes at a later stage

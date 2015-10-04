@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 date
+set -x
 
 #to run this 
 #ssh into the vagrant machine
@@ -61,6 +62,16 @@ mkdir /var/www/html/shiftcsd2/templates_c
 mkdir /var/www/html/shiftcsd2sup/templates_c
 mkdir /var/www/html/shiftcsd1sup/templates_c
 mkdir /var/www/html/shiftcsd1/templates_c
+
+
+chmod -R 777  /var/www/html/cilist/templates_c
+chmod -R 777  /var/www/html/leanmfg/templates_c
+chmod -R 777  /var/www/html/prodrpt/templates_c
+chmod -R 777  /var/www/html/shiftcsd2/templates_c
+chmod -R 777  /var/www/html/shiftcsd2sup/templates_c
+chmod -R 777  /var/www/html/shiftcsd1sup/templates_c
+chmod -R 777  /var/www/html/shiftcsd1/templates_c
+
 
 date
 
