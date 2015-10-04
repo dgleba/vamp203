@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+md /var
 md /var/varvamp
 cd /var/varvamp
 mkdir vamp203c
