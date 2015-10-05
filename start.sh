@@ -17,15 +17,15 @@ default_domain="vamp203.local"
 mkdir -p tmp
 tmp="/home/bun/tmp"
 
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/12bootstrap203.sh -P ~
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/15import203.sh -P ~
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/18django203.sh -P ~
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/configv1.sh.example -P ~
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/90get.sh -P ~
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/90getb.sh -P ~
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/tmp1.sh -P ~
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/st2 -P ~
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/mntv -P ~
+wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/12bootstrap203.sh -P ~
+wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/15import203.sh -P ~
+wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/18django203.sh -P ~
+wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/configv1.sh.example -P ~
+wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/90get.sh -P ~
+wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/90getb.sh -P ~
+wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/tmp1.sh -P ~
+wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/st2 -P ~
+wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/mntv -P ~
 chmod +x ~/*.sh
 
 #clear
@@ -105,7 +105,7 @@ sudo apt-get -y install build-essential module-assistant
 sudo m-a prepare
 
 cd /tmp
-wget http://download.virtualbox.org/virtualbox/5.0.2/VBoxGuestAdditions_5.0.2.iso
+wget -N http://download.virtualbox.org/virtualbox/5.0.2/VBoxGuestAdditions_5.0.2.iso
 sudo mount -o loop VBoxGuestAdditions_5.0.2.iso /mnt
 cd /mnt
 sudo ./VBoxLinuxAdditions.run
