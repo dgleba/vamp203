@@ -117,15 +117,6 @@ sleep 11
 # finish
 sudo updatedb
 
-# mount vbox shares...
-#
-mkdir share203
-#sudo mount -t vboxsf -o uid=$UID,gid=$(id -g) vamp203 ~/share203
-sudo mount -t vboxsf  vamp203 ~/share203
-sudo mkdir -p /var/www/html
-sudo mount -t vboxsf  html /var/www/html
-
-sudo cp /var/www/html/vm/configv1.sh ~
 
 echo " DONE; rebooting ... "
 # reboot
