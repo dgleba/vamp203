@@ -121,6 +121,12 @@ sleep 11
 # finish
 sudo updatedb
 
+# add shares to rc.local
+sudo cp /etc/rc.local /etc/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
+mkdir -p ~/backup
+sudo cp /etc/rc.local ~/backup/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
+sudo sed -i "/^exit 0/i	sudo mount -t vboxsf  share203 ~/share203\nsudo mount -t vboxsf  html /var/www/html\n" /etc/rc.local
+
 
 echo " DONE; rebooting ... "
 # reboot
