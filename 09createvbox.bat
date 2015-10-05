@@ -1,9 +1,10 @@
 :create vbox empty...  [win]
 
+::ref
 :http://zaufi.github.io/administration/2012/08/31/vbox-setup-new-vm/
 :http://www.trimentation.com/wp/?p=100
 
-set vmname=vamp203c
+set vmname=vamp203d
 set vboxm="C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"
 
 %vboxm% createvm --name %vmname% --ostype Ubuntu_64 --register
@@ -15,27 +16,23 @@ set vboxm="C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"
 :You can either change the machine's network settings or stop the machine.
 : noworky.. %vboxm% modifyvm %vmname%  --nic1 bridged --bridgeadapter1 eth0 
 :%vboxm% modifyvm %vmname%  --vrde on --vrdeport 5555 
-no...
+::no...
 :%vboxm% modifyvm %vmname%   --nic1 bridged --bridgeadapter3 wlan0
 
 %vboxm% modifyvm %vmname% --memory 768 --cpus 1  --acpi on   --clipboard bidirectional
 
 :nic...
-:http://kappataumu.com/articles/creating-an-Ubuntu-VM-with-packer.html
+:: ref:  http://kappataumu.com/articles/creating-an-Ubuntu-VM-with-packer.html
 %vboxm% list bridgedifs
-: mine on toshiba s55t --   Intel(R) Dual Band Wireless-AC 3160 #2
-:eg:  vboxmanage modifyvm your-vm-name-here --nic1 bridged --bridgeadapter1 "Intel(R) Ethernet Connection I217-V"
+: mine - on toshiba s55t --   Intel(R) Dual Band Wireless-AC 3160 #2
+: eg:  vboxmanage modifyvm your-vm-name-here --nic1 bridged --bridgeadapter1 "Intel(R) Ethernet Connection I217-V"
 :worked..
-:%vboxm% modifyvm %vmname%  --nic1 bridged --bridgeadapter1 "Intel(R) Dual Band Wireless-AC 3160 #2" 
-:try --nictype1 virtio
 %vboxm% modifyvm %vmname%  --nic1 bridged --bridgeadapter1 "Intel(R) Dual Band Wireless-AC 3160 #2" --nictype1 virtio
 
 
 :shared folders...
 
 :%vboxm% sharedfolder add %vmname% --name %vmname% --hostpath c:/var/vamp203b/ --automount
-%vboxm% sharedfolder remove %vmname% --name vamp203 
-%vboxm% sharedfolder remove %vmname% --name vamp203b 
 %vboxm% sharedfolder remove %vmname% --name share203 
 mkdir c:\var\share203
 %vboxm% sharedfolder add %vmname% --name share203 --hostpath c:/var/share203/ 
@@ -43,6 +40,7 @@ mkdir c:\var\share203
 %vboxm% sharedfolder add %vmname% --name html --hostpath c:/p2/vamp/htdocs 
 
 
+::to be used after guest additions are added to the vm. use in vm later.
 :mkdir ~/share203
 :sudo mount -t vboxsf -o uid=$UID,gid=$(id -g) share203 ~/share203
 :sudo mount -t vboxsf  share203 ~/share203
@@ -75,9 +73,6 @@ mkdir "C:\Users\%USERNAME%\VirtualBox VMs\%vmname%\"
 :get info from another vm..
 :%vboxm% import -n C:\0\ubuntu201.ova
 
-:for now... setup the network in gui..........
-
 %vboxm% export %vmname% --manifest
-
 
 pause

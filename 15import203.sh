@@ -1,17 +1,16 @@
 #!/usr/bin/env bash
 
 date
+#echo requested commands...
 set -x
 
 #to run this 
 #ssh into the vagrant machine
-# ./import198.sh
+# ./15import203.sh
 #
 
 source ~/configv1.sh
 
-#echo requested commands...
-set -x
 
 mysql -uroot -p$PASSWORD -e "create database cilist"; 
 mysql -uroot -p$PASSWORD -e "create database enamesdb"; 
@@ -41,8 +40,8 @@ mysql -uroot -p$PASSWORD --one-database shiftcsd2suprv < /var/www/html/backup/my
 
 
 # use here document to provide input...
-# https://ignaciopp.wordpress.com/2011/08/08/heredoc-tip-execute-mysql-commands-from-shell-with-multiline-scripts-or-queries/
-#  heredoc not working just do one line at a time.
+#  https://ignaciopp.wordpress.com/2011/08/08/heredoc-tip-execute-mysql-commands-from-shell-with-multiline-scripts-or-queries/
+#    heredoc not working just do one line at a time.
 mysql -uroot -p$PASSWORD  -e "CREATE USER 'dg417'@'localhost' IDENTIFIED BY '$PASSWORD2';"
 mysql -uroot -p$PASSWORD  -e "GRANT USAGE ON *.* TO 'dg417'@'localhost' IDENTIFIED BY '$PASSWORD2' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;"
 mysql -uroot -p$PASSWORD  -e "GRANT ALL PRIVILEGES ON prodrptdb.* TO dg417@localhost ;"
