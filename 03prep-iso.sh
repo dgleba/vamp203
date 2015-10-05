@@ -7,7 +7,8 @@ cd /var/varvamp
 mkdir vamp203c
 cd vamp203c
 
-rm create-unattended-iso.sh
+rm ./create-unattended-iso.sh
+
 wget https://raw.githubusercontent.com/dgleba/vamp203/master/create-unattended-iso.sh
 
 #test...

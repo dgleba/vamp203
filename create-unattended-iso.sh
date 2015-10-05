@@ -55,6 +55,11 @@ echo " |            UNATTENDED UBUNTU ISO MAKER            |"
 echo " +---------------------------------------------------+"
 echo
 
+mkdir -p $tmp
+mkdir -p $tmp/iso_org
+mkdir -p $tmp/iso_new
+
+
 # ask whether to include vmware tools or not
 while true; do
     echo " which ubuntu edition would you like to remaster:"
@@ -122,9 +127,6 @@ fi
 
 # create working folders
 echo " remastering your iso file"
-mkdir -p $tmp
-mkdir -p $tmp/iso_org
-mkdir -p $tmp/iso_new
 
 # mount the image
 if grep -qs $tmp/iso_org /proc/mounts ; then
