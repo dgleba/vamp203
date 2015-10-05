@@ -1,6 +1,8 @@
 #!/bin/bash
 set -x
 
+#Note: vbox shares are not available till it reboots after this script runs.
+#
 #David Gleba 2015-10-01 03:15PM
 
 

@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+#Note: vbox shares are not available till it reboots after start.sh script runs.
+#
+#David Gleba 2015-10-01 03:15PM
+
 date
 set -x
 
