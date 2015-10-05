@@ -2,7 +2,7 @@
 
 [https://github.com/dgleba/vamp203](https://github.com/dgleba/vamp203)
 
-## General Usage Flow
+## General Usage - This is how I used it.
 
 I am doing this on a Windows machine. (I used a Vagrant Ubuntu machine running in windows to create the iso).
 
@@ -25,7 +25,8 @@ I am doing this on a Windows machine. (I used a Vagrant Ubuntu machine running i
 ## Preparation
 
 - I put a copy of my served web root files in c:\p2\vamp\htdocs  
-    say for example c:\p2\vamp\htdocs\menu\index.html
+    say for example c:\p2\vamp\htdocs\menu\index.html   
+	Ask me for a sample website and data. 
 - I had to run `vboxmanage list bridgedifs`  to get a list of adapter names to use in  `--bridgeadapter1 `  --  see 09createvbox.bat.  
 - match the version of guest additions to your version of virtualbox. See `start.sh` around line 107.    
 - before running `12bootstrap203.sh`, edit `configv1.sh` with your passwords. You can look at the example `configv1.sh.example`.   
@@ -38,10 +39,9 @@ I am doing this on a Windows machine. (I used a Vagrant Ubuntu machine running i
 - http://10.4.10.249:8985/django161c/admin/
 - http://10.4.10.249/menu2/
 - http://10.4.10.249/menu/
-- http://10.4.10.249/test/
-- http://10.4.10.249/test/strap179/
+- http://10.4.10.249/test2/
+- http://10.4.10.249/test2/strap179/
 - 
--   
 
 
 _____________
