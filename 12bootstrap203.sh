@@ -107,8 +107,9 @@ sudo apt-get -y install mc
 
 
 # comment these out to just run this manually after boot. just need it once. renamed to import198.sh
-#./import198.sh
-#./django198.sh
+#sudo ./15import198.sh
+#sudo ./18django198.sh
+
 #
 date
 #

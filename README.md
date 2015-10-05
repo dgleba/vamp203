@@ -1,8 +1,8 @@
-# Virtualbox Server - Ubuntu Apache MySQL PHP Python Django
+# Virtualbox Server - Ubuntu Apache MySQL PHP Python Django - Windows host, Linux guest.
 
-https://github.com/dgleba/vamp203
+[https://github.com/dgleba/vamp203](https://github.com/dgleba/vamp203)
 
-##General Usage Flow
+## General Usage Flow
 
 I am doing this on a Windows machine. (I used a Vagrant Ubuntu machine running in windows to create the iso).
 
@@ -10,12 +10,15 @@ I am doing this on a Windows machine. (I used a Vagrant Ubuntu machine running i
 - Install virtualbox
 - create unattended ubuntu 14.04 server iso ( I used a vagrant Ubuntu VM to create it. vamp198e)   
       See instructions for unattended iso maker below...  
-      I used 03prep-iso.sh  
-- create the virtual box  ( I did this from windows) 09createvbox.bat
+      I used `03prep-iso.sh`  
+- create the virtual box  ( I did this from windows)  
+  `09createvbox.bat`
 - install the resulting Ubuntu 14.04 64bit server iso in vbox (just press enter to start installing after you see the startup screen.)  
-- after booting the vbox ubuntu server and logging in, run  sudo ./start.sh   
+- after booting the vbox ubuntu server and logging in, run   
+	`sudo ./start.sh`  
   note: if black screen after it boots up after installing...  press ctrl-alt-f1 to get login prompt 
-- run  sudo ./12bootstrap203.sh which runs 15import203.sh and 18django203.sh
+- run  `sudo ./12bootstrap203.sh`   
+    which runs 15import203.sh and 18django203.sh
 - visit in your browser: [ip-address]/menu or any other address that leads to the web content you placed in c:\p2\vamp\htdocs  
   type `ifconfig` in the server console to get the ip of the machine.
 
@@ -24,9 +27,9 @@ I am doing this on a Windows machine. (I used a Vagrant Ubuntu machine running i
 - I put a copy of my served web root files in c:\p2\vamp\htdocs  
     say for example c:\p2\vamp\htdocs\menu\index.html
 - I had to run `vboxmanage list bridgedifs`  to get a list of adapter names to use in  `--bridgeadapter1 `  --  see 09createvbox.bat.  
-- match the version of guest additions to your version of virtualbox. See start.sh around line 104.    
-- before running 12bootstrap203.sh, edit configv1.sh with your passwords. You can look at the example configv1.sh.example.   
-  	I put my configv1.sh in c:\p2\vamp\htdocs\vm   - the script copies it from there.
+- match the version of guest additions to your version of virtualbox. See `start.sh` around line 107.    
+- before running `12bootstrap203.sh`, edit `configv1.sh` with your passwords. You can look at the example `configv1.sh.example`.   
+  	I put my `configv1.sh` in `c:\p2\vamp\htdocs\vm`   - the script copies it from there.
   
 
 
