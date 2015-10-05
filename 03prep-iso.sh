@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -x
 
 md /var
 md /var/varvamp
@@ -22,3 +22,5 @@ wget https://raw.githubusercontent.com/dgleba/vamp203/master/create-unattended-i
 chmod +x create-unattended-iso.sh
 #  >>>>>>edit it for tmp and iso source
 sudo ./create-unattended-iso.sh
+
+
