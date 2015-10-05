@@ -4,8 +4,8 @@ set -x
 md /var
 md /var/varvamp
 cd /var/varvamp
-mkdir vamp203c
-cd vamp203c
+mkdir vamp203a
+cd vamp203a
 
 rm ./create-unattended-iso.sh
 

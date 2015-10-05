@@ -1,3 +1,10 @@
+
+#ref:
+#netson.seed
+#and
+#https://github.com/analytically/ubuntu-netboot-tftp/blob/master/preseed.cfg
+
+
 # regional setting
 d-i debian-installer/language                               string      en_US:en
 d-i debian-installer/country                                string      US
@@ -16,7 +23,7 @@ d-i debconf/language                                        string      en_US:en
 
 # network settings
 d-i netcfg/choose_interface                                 select      auto
-d-i netcfg/dhcp_timeout                                     string      5
+d-i netcfg/dhcp_timeout                                     string      25
 d-i netcfg/get_hostname                                     string      {{hostname}}
 d-i netcfg/get_domain                                       string      {{hostname}}
 
@@ -43,6 +50,7 @@ d-i passwd/user-default-groups                              string      adm cdro
 d-i user-setup/encrypt-home                                 boolean     false
 
 # configure apt
+
 d-i apt-setup/restricted                                    boolean     true
 d-i apt-setup/universe                                      boolean     true
 d-i apt-setup/backports                                     boolean     true
@@ -51,10 +59,16 @@ d-i apt-setup/security_host                                 string      security
 d-i apt-setup/security_path                                 string      /ubuntu
 tasksel tasksel/first                                       multiselect Basic Ubuntu server
 d-i pkgsel/upgrade                                          select      safe-upgrade
-d-i pkgsel/update-policy                                    select      none
+# Policy for applying updates. May be "none" (no automatic updates),
+# "unattended-upgrades" (install security updates automatically), or
+# "landscape" (manage system with Landscape).
+d-i pkgsel/update-policy                                    select unattended-upgrades
+#d-i pkgsel/update-policy                                   select      none
 d-i pkgsel/updatedb                                         boolean     true
 
+
 # disk partitioning
+
 d-i partman/confirm_write_new_label                         boolean     true
 d-i partman/choose_partition                                select      finish
 d-i partman/confirm_nooverwrite                             boolean     true
@@ -72,10 +86,14 @@ d-i partman-auto-lvm/guided_size                            string      max
 d-i partman-partitioning/confirm_write_new_label            boolean     true
 
 # grub boot loader
+
 d-i grub-installer/only_debian                              boolean     true
 d-i grub-installer/with_other_os                            boolean     true
+# Wait for x seconds in grub
+d-i	grub-installer/timeout                                  string      9
 
 # finish installation
+
 d-i finish-install/reboot_in_progress                       note
 d-i finish-install/keep-consoles                            boolean     false
 d-i cdrom-detect/eject                                      boolean     true

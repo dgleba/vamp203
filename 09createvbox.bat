@@ -23,11 +23,17 @@ set vboxm="C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"
 
 :nic...
 :: ref:  http://kappataumu.com/articles/creating-an-Ubuntu-VM-with-packer.html
+:: get names of physical interfaces
 %vboxm% list bridgedifs
 : mine - on toshiba s55t --   Intel(R) Dual Band Wireless-AC 3160 #2
 : eg:  vboxmanage modifyvm your-vm-name-here --nic1 bridged --bridgeadapter1 "Intel(R) Ethernet Connection I217-V"
 :worked..
-%vboxm% modifyvm %vmname%  --nic1 bridged --bridgeadapter1 "Intel(R) Dual Band Wireless-AC 3160 #2" --nictype1 virtio
+
+SET _prefix=%COMPUTERNAME:~0,5% 
+IF %_prefix%==redwe  %vboxm% modifyvm %vmname%  --nic1 bridged --bridgeadapter1 "Intel(R) Dual Band Wireless-AC 3160 #2" --nictype1 virtio
+
+SET _prefix=%COMPUTERNAME:~0,8% 
+IF %_prefix%==PMDS-3HZ  %vboxm% modifyvm %vmname%  --nic1 bridged --nictype1 virtio --bridgeadapter1 "Intel(R) Ethernet Connection I217-LM"
 
 
 :shared folders...
