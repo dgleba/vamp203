@@ -16,19 +16,31 @@ I am doing this on a Windows machine. (I used a Vagrant Ubuntu machine running i
 - after booting the vbox ubuntu server and logging in, run  sudo ./start.sh   
   note: if black screen after it boots up after installing...  press ctrl-alt-f1 to get login prompt 
 - run  sudo ./12bootstrap203.sh which runs 15import203.sh and 18django203.sh
-- visit in your browser: [ip-address]/menu or any other address that leads to the web content you placed in c:\p2\vamp\htdocs
-
+- visit in your browser: [ip-address]/menu or any other address that leads to the web content you placed in c:\p2\vamp\htdocs  
+  type `ifconfig` in the server console to get the ip of the machine.
 
 ## Preparation
 
 - I put a copy of my served web root files in c:\p2\vamp\htdocs  
     say for example c:\p2\vamp\htdocs\menu\index.html
-- I had to run ' vboxmanage list bridgedifs '  to get a list of adapter names to use in  ' --bridgeadapter1 ' see 09createvbox.bat.  
+- I had to run `vboxmanage list bridgedifs`  to get a list of adapter names to use in  `--bridgeadapter1 `  --  see 09createvbox.bat.  
 - match the version of guest additions to your version of virtualbox. See start.sh around line 104.    
 - before running 12bootstrap203.sh, edit configv1.sh with your passwords. You can look at the example configv1.sh.example.   
-  I put my configv1.sh in c:\p2\vamp\htdocs\vm   - the script copies it from there.
+  	I put my configv1.sh in c:\p2\vamp\htdocs\vm   - the script copies it from there.
   
-  
+
+
+## Examples of code I served up.
+
+- http://10.4.10.249:8985/django161c/admin/
+- http://10.4.10.249/menu2/
+- http://10.4.10.249/menu/
+- http://10.4.10.249/test/
+- http://10.4.10.249/test/strap179/
+- 
+-   
+
+
 _____________
 
 
