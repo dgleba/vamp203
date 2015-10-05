@@ -27,7 +27,7 @@ fi
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-function offline  {
+offlinestuff  {
 
 
 sudo apt-get remove mysql-server phpmyadmin apache2

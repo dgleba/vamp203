@@ -12,7 +12,7 @@ sudo ./18django198.sh
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-function offline  {
+offlinestuff  {
 
 
 sudo apt-get remove mysql-server phpmyadmin apache2
