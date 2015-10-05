@@ -6,14 +6,27 @@ set -x
 # mount vbox shares...
 #
 mkdir share203
+if mount | grep /share203 > /dev/null; then
+    echo "yay"
+else
+    echo "nay"
+	sudo mount -t vboxsf  share203 ~/share203
+fi
 #sudo mount -t vboxsf -o uid=$UID,gid=$(id -g) vamp203 ~/share203
-sudo mount -t vboxsf  vamp203 ~/share203
+#
 sudo mkdir -p /var/www/html
-sudo mount -t vboxsf  html /var/www/html
+if mount | grep /var/www/html > /dev/null; then
+    echo "yay"
+else
+    echo "nay"
+	sudo mount -t vboxsf  html /var/www/html
+fi
 
+#copy config from website files...
+#
 sudo cp /var/www/html/vm/configv1.sh ~
 
-sleep 33
+sleep 9
 
 source ~/configv1.sh
 
