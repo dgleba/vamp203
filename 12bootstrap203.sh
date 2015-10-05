@@ -31,10 +31,17 @@ fi
 
 #copy config from website files...
 #
+if [ ! -f /var/www/html/vm/configv1.sh ]; then
+    echo "Error: configv1.sh File not found!"
+fi
+if [ ! -f /var/www/html/index.html ]; then
+       echo "Error: website files not found! Exiting. There should at least be /var/www/html/index.html - Please fix this and try again."
+	exit 99
+fi
+
 sudo cp /var/www/html/vm/configv1.sh ~
 
 sleep 9
-
 
 source ~/configv1.sh
 
@@ -43,7 +50,7 @@ source ~/configv1.sh
 #sudo mkdir "/var/www/html/${PROJECTFOLDER}"
 
 # update / upgrade
-sudo apt-get update
+#sudo apt-get update
 #sudo apt-get -y upgrade
 
 # install apache 2.5 and php 5.5
@@ -70,9 +77,9 @@ sudo apt-get -y install phpmyadmin
 sudo apt-get -y install python-pip libapache2-mod-wsgi
 sudo pip install django
 
-sudo pip install django-admin-bootstrapped
+#sudo pip install django-admin-bootstrapped
 # got error - use apt-get instead.......  sudo pip install mysql-python
-sudo apt-get install python-mysqldb
+#  sudo apt-get install python-mysqldb
 
 
 

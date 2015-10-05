@@ -1,15 +1,30 @@
-df#!/usr/bin/env bash
+#!/bin/bash
 #
 date
 set -x
 
+read -n1 -t4 -p "Press the ENTER key to keep going or wait some seconds....."
+
+#copy config from website files...
+#
+if [ ! -f /var/www/html/vm/configv1.sh ]; then
+    echo "configv1.sh File not found!"
+
+fi
+if [ ! -f /var/www/html/z,index.html ]; then 
+    echo "Error: website files not found! Exiting. There should at least be /var/www/html/index.html - Please fix this and try again."
+		date 
+		echo "Hit Enter to Continue, this will continue after some seconds pass..." 
+		read readtime1 -n1
+		date
+	exit 99
+fi
+
+sudo cp /var/www/html/vm/configv1.sh ~
+
+sleep 9
 
 
-# add shares to rc.local
-sudo cp /etc/rc.local /etc/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
-mkdir ~/backup
-sudo cp /etc/rc.local ~/backup/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
-sudo sed -i "/^exit 0/i	sudo mount -t vboxsf  share203 ~/share203\nsudo mount -t vboxsf  html /var/www/html\n" /etc/rc.local
 
 
 #
@@ -19,6 +34,15 @@ sudo sed -i "/^exit 0/i	sudo mount -t vboxsf  share203 ~/share203\nsudo mount -t
 
 
 offlinestuff()  {
+
+
+
+
+# add shares to rc.local
+sudo cp /etc/rc.local /etc/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
+mkdir ~/backup
+sudo cp /etc/rc.local ~/backup/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
+sudo sed -i "/^exit 0/i	sudo mount -t vboxsf  share203 ~/share203\nsudo mount -t vboxsf  html /var/www/html\n" /etc/rc.local
 
 
 #Add a line before exit 0 in rc.local

@@ -24,11 +24,16 @@ fi
 
 
 
+echo end1
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-offlinestuff  {
+offlinestuff()  {
 
+echo comment2
+#begin comment --  http://stackoverflow.com/questions/947897/block-comments-in-a-shell-script
+: <<'END'
 
 sudo apt-get remove mysql-server phpmyadmin apache2
 
@@ -56,6 +61,8 @@ mkdir ~/share203
 sudo mount -t vboxsf  share203 ~/share203
 sudo mkdir -p /var/www/html
 sudo mount -t vboxsf  html /var/www/html
+
+END
 
 }
 
