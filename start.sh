@@ -15,13 +15,13 @@ default_domain="vamp203.local"
 mkdir -p tmp
 tmp="/home/bun/tmp"
 
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/12bootstrap203.sh
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/15import203.sh
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/18django203.sh
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/configv1.sh.example
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/90get.sh
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/90getb.sh
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/tmp1.sh
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/12bootstrap203.sh -P ~
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/15import203.sh -P ~
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/18django203.sh -P ~
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/configv1.sh.example -P ~
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/90get.sh -P ~
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/90getb.sh -P ~
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/tmp1.sh -P ~
 chmod +x ~/*.sh
 
 #clear
@@ -125,6 +125,7 @@ sudo mount -t vboxsf  vamp203 ~/share203
 sudo mkdir -p /var/www/html
 sudo mount -t vboxsf  html /var/www/html
 
+sudo cp /var/www/html/vm/configv1.sh ~
 
 echo " DONE; rebooting ... "
 # reboot

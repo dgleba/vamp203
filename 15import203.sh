@@ -8,7 +8,7 @@ set -x
 # ./import198.sh
 #
 
-source /home/vagrant/configv1.sh
+source ~/configv1.sh
 
 #echo requested commands...
 set -x
