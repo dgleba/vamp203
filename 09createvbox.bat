@@ -5,7 +5,8 @@
 :http://www.trimentation.com/wp/?p=100
 
 set vmname=vamp203d
-set vboxm="C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"
+set vboxm1="C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"
+set vboxm="%VBOX_MSI_INSTALL_PATH%VBoxManage"
 
 %vboxm% createvm --name %vmname% --ostype Ubuntu_64 --register
 
@@ -34,6 +35,10 @@ IF %_prefix%==redwe  %vboxm% modifyvm %vmname%  --nic1 bridged --bridgeadapter1 
 
 SET _prefix=%COMPUTERNAME:~0,8% 
 IF %_prefix%==PMDS-3HZ  %vboxm% modifyvm %vmname%  --nic1 bridged --nictype1 virtio --bridgeadapter1 "Intel(R) Ethernet Connection I217-LM"
+
+SET _prefix=%COMPUTERNAME:~0,8% 
+IF %_prefix%==PMDSDATA  %vboxm% modifyvm %vmname%  --nic1 bridged --nictype1 virtio --bridgeadapter1 "Microsoft Hyper-V Network Adapter"
+
 
 
 :shared folders...
