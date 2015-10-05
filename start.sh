@@ -25,6 +25,7 @@ wget https://raw.githubusercontent.com/dgleba/vamp203/master/90get.sh -P ~
 wget https://raw.githubusercontent.com/dgleba/vamp203/master/90getb.sh -P ~
 wget https://raw.githubusercontent.com/dgleba/vamp203/master/tmp1.sh -P ~
 wget https://raw.githubusercontent.com/dgleba/vamp203/master/st2 -P ~
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/mntv -P ~
 chmod +x ~/*.sh
 
 #clear

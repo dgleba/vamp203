@@ -13,18 +13,18 @@ set -x
 #
 mkdir share203
 if mount | grep /share203 > /dev/null; then
-    echo "yay"
+    echo "its mounted"
 else
-    echo "nay"
+    echo "not, so mount it"
 	sudo mount -t vboxsf  share203 ~/share203
 fi
 #sudo mount -t vboxsf -o uid=$UID,gid=$(id -g) vamp203 ~/share203
 #
 sudo mkdir -p /var/www/html
 if mount | grep /var/www/html > /dev/null; then
-    echo "yay"
+    echo "already mounted"
 else
-    echo "nay"
+    echo "now mount it"
 	sudo mount -t vboxsf  html /var/www/html
 fi
 

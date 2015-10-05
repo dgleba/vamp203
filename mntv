@@ -1,32 +1,37 @@
-df#!/usr/bin/env bash
+#!/usr/bin/env bash
 #
 date
 set -x
 
-
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/12bootstrap203.sh -P ~
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/15import203.sh -P ~
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/18django203.sh -P ~
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/configv1.sh.example -P ~
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/90get.sh -P ~
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/90getb.sh -P ~
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/tmp1.sh -P ~
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/st2 -P ~
-wget https://raw.githubusercontent.com/dgleba/vamp203/master/mntv -P ~
-chmod +x ~/*.sh
-
-
-
+# mount vbox shares...
 #
+mkdir share203
+if mount | grep /share203 > /dev/null; then
+    echo "its mounted"
+else
+    echo "not, so mount it"
+	sudo mount -t vboxsf  share203 ~/share203
+fi
+#sudo mount -t vboxsf -o uid=$UID,gid=$(id -g) vamp203 ~/share203
 #
-#
+sudo mkdir -p /var/www/html
+if mount | grep /var/www/html > /dev/null; then
+    echo "already mounted"
+else
+    echo "now mount it"
+	sudo mount -t vboxsf  html /var/www/html
+fi
 
 
 
-offlinestuff()  {
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+function offline  {
 
 
 sudo apt-get remove mysql-server phpmyadmin apache2
+
 
 mkdir -p /var/www/html/cilist/templates_c
 chmod 777 -r /var/www/html/cilist/templates_c
@@ -53,6 +58,10 @@ sudo mkdir -p /var/www/html
 sudo mount -t vboxsf  html /var/www/html
 
 }
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 
 #
 date

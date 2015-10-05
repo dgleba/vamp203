@@ -8,7 +8,7 @@ date
 # this is from home - /home/vagrant
 
 
-function vhost8985 
+vhost8985 
 {
 sudo tee /etc/apache2/sites-available/djangolin1.conf <<EOF
 #
@@ -86,7 +86,7 @@ EOF
 }
 
 
-function djangosoft
+djangosoft
 {
   sleep 1
   #moved to bootstrap.sh..
@@ -96,7 +96,7 @@ function djangosoft
 }
 
 
-function apache1 
+apache1 
 {
   sudo a2dissite djangolin1.conf
   sudo a2ensite djangolin1.conf
