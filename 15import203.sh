@@ -53,6 +53,7 @@ mysql -uroot -p$PASSWORD  -e "GRANT ALL PRIVILEGES ON cilist.* TO dg417@localhos
 mysql -uroot -p$PASSWORD  -e "GRANT ALL PRIVILEGES ON enamesdb.* TO dg417@localhost ;"
 mysql -uroot -p$PASSWORD  -e "GRANT ALL PRIVILEGES ON shift_smsmeer.* TO dg417@localhost ;"
 
+#templates_c
 
 mkdir /var/www/html/cilist/templates_c
 mkdir /var/www/html/leanmfg/templates_c
@@ -70,6 +71,26 @@ chmod -R 777  /var/www/html/shiftcsd2/templates_c
 chmod -R 777  /var/www/html/shiftcsd2sup/templates_c
 chmod -R 777  /var/www/html/shiftcsd1sup/templates_c
 chmod -R 777  /var/www/html/shiftcsd1/templates_c
+
+
+#userconfig:
+
+mkdir /var/www/html/cilist/user_config
+mkdir /var/www/html/leanmfg/user_config
+mkdir /var/www/html/prodrpt/user_config
+mkdir /var/www/html/shiftcsd2/user_config
+mkdir /var/www/html/shiftcsd2sup/user_config
+mkdir /var/www/html/shiftcsd1sup/user_config
+mkdir /var/www/html/shiftcsd1/user_config
+
+
+chmod -R 777  /var/www/html/cilist/user_config
+chmod -R 777  /var/www/html/leanmfg/user_config
+chmod -R 777  /var/www/html/prodrpt/user_config
+chmod -R 777  /var/www/html/shiftcsd2/user_config
+chmod -R 777  /var/www/html/shiftcsd2sup/user_config
+chmod -R 777  /var/www/html/shiftcsd1sup/user_config
+chmod -R 777  /var/www/html/shiftcsd1/user_config
 
 
 date
