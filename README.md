@@ -8,11 +8,11 @@ I am doing this on a Windows machine with a Vagrant Ubuntu machine running in it
 
 - see preparation below.
 - Install virtualbox
-- create unattended ubuntu 14.04 server iso ( I used a vagrant Ubuntu VM to create it. vamp198e) 
-      See instructions for unattended iso maker below...
-      I used 03prep-iso.sh
+- create unattended ubuntu 14.04 server iso ( I used a vagrant Ubuntu VM to create it. vamp198e)   
+      See instructions for unattended iso maker below...  
+      I used 03prep-iso.sh  
 - create the virtual box  ( I did this from windows) 09createvbox.bat
-- install the resulting Ubuntu 14.04 64bit server iso in vbox (just press enter to start installing after you see the startup screen.)
+- install the resulting Ubuntu 14.04 64bit server iso in vbox (just press enter to start installing after you see the startup screen.)  
 -   note: if black screen after it boots up...  press ctrl-alt-f1 to get login prompt 
 - after booting the vbox ubuntu server and logging in, run  sudo ./start.sh
 - run  sudo ./12bootstrap203.sh which runs 15import203.sh and 18django203.sh
@@ -21,10 +21,11 @@ I am doing this on a Windows machine with a Vagrant Ubuntu machine running in it
 
 ## Preparation
 
-- put a copy of your served web root files in c:\p2\vamp\htdocs
+- I put a copy of my served web root files in c:\p2\vamp\htdocs  
     say for example c:\p2\vamp\htdocs\menu\index.html
 - match the version of guest additions to your version of virtualbox. See start.sh around line 104.    
-- before running 12bootstrap203.sh, edit configv1.sh with your passwords. You can look at the example configv1.sh.example.
+- before running 12bootstrap203.sh, edit configv1.sh with your passwords. You can look at the example configv1.sh.example.   
+  I put my configv1.sh in c:\p2\vamp\htdocs\vm   - the script copies it from there.
   
   
 _____________

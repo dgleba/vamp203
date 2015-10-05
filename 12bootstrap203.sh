@@ -3,6 +3,8 @@
 date
 set -x
 
+#PROJECTFOLDER='project'
+
 # mount vbox shares...
 #
 mkdir share203
@@ -22,15 +24,16 @@ else
 	sudo mount -t vboxsf  html /var/www/html
 fi
 
+
 #copy config from website files...
 #
 sudo cp /var/www/html/vm/configv1.sh ~
 
 sleep 9
 
+
 source ~/configv1.sh
 
-#PROJECTFOLDER='project'
 
 # create project folder
 #sudo mkdir "/var/www/html/${PROJECTFOLDER}"
@@ -63,6 +66,10 @@ sudo apt-get -y install phpmyadmin
 sudo apt-get -y install python-pip libapache2-mod-wsgi
 sudo pip install django
 
+sudo pip install django-admin-bootstrapped
+# got error - use apt-get instead.......  sudo pip install mysql-python
+sudo apt-get install python-mysqldb
+
 
 
 #	# setup hosts file
@@ -93,7 +100,6 @@ curl -s https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 
 sudo apt-get -y install mc
-
 
 
 # comment these out to just run this manually after boot. just need it once. renamed to import198.sh

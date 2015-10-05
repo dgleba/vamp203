@@ -88,9 +88,11 @@ EOF
 
 function djangosoft
 {
-  sudo pip install django-admin-bootstrapped
+  sleep 1
+  #moved to bootstrap.sh..
+  #sudo pip install django-admin-bootstrapped
   # got error - use apt-get instead.......  sudo pip install mysql-python
-  sudo apt-get install python-mysqldb
+  #sudo apt-get install python-mysqldb
 }
 
 
@@ -109,7 +111,7 @@ function apache1
 set -x
 date
 
-djangosoft
+#djangosoft
 vhost8985
 apache1
 
