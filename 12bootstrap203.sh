@@ -11,7 +11,7 @@ set -x
 
 # mount vbox shares...
 #
-mkdir share203
+mkdir -p ~/share203
 if mount | grep /share203 > /dev/null; then
     echo "its mounted"
 else

@@ -21,7 +21,7 @@ del "%bkdir%\%bkfname%.%computername%.7z"
 :timeout 2
 
 :backup...
-C:\n\Dropbox\csd\p2\7-Zip\7z.exe a -y -t7z  -xr!xdirx   "%bkdir%\%bkfname%.%computername%.%dhms%.7z"  %srcdir%\%prjfold%
+C:\n\Dropbox\csd\p2\7-Zip\7z.exe a -y -t7z  -xr!xdirx   "%bkdir%\%bkfname%.%computername%.%dhms%.7z"  %srcdir%\%prjfold%  C:\var\share203
 
 :copy
 mkdir %dbxcpy%\%prjfold%

@@ -6,9 +6,9 @@ set -x
 
 #Add a line before exit 0 in rc.local
 #no sed '/^exit 0/i\echo deadline > /sys/block/sda/queue/scheduler\necho 1 > /sys/block/sda/queue/iosched/fifo_batch' ~/rc.local   -redir- ~/rc.local
- 
-sed -i "/^exit 0/i\/newly\/inserted\/path\/to\/script3.sh" ~/rc.local
-sed -i "/^exit 0/iline one\nline 2\n" ~/rc.local
+#sed -i "/^exit 0/i\/newly\/inserted\/path\/to\/script3.sh" ~/rc.local
+#sed -i "/^exit 0/iline one\nline 2\n" ~/rc.local
+sed -i "/^exit 0/i	sudo mount -t vboxsf  share203 ~/share203\nsudo mount -t vboxsf  html /var/www/htmln" ~/rc.local
 
 
 #
