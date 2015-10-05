@@ -4,6 +4,23 @@ date
 set -x
 
 
+#Add a line before exit 0 in rc.local
+#no sed '/^exit 0/i\echo deadline > /sys/block/sda/queue/scheduler\necho 1 > /sys/block/sda/queue/iosched/fifo_batch' ~/rc.local   -redir- ~/rc.local
+ 
+sed -i "/^exit 0/i\/newly\/inserted\/path\/to\/script3.sh" ~/rc.local
+sed -i "/^exit 0/iline one\nline 2\n" ~/rc.local
+
+
+#
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+
+
+
+offlinestuff()  {
+
+
+
 wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/12bootstrap203.sh -P ~
 wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/15import203.sh -P ~
 wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/18django203.sh -P ~
@@ -15,15 +32,6 @@ wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/st2 -P ~
 wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/mntv -P ~
 chmod +x ~/*.sh
 
-
-
-#
-#
-#
-
-
-
-offlinestuff()  {
 
 
 sudo apt-get remove mysql-server phpmyadmin apache2
