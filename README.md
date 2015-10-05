@@ -15,8 +15,7 @@ I am doing this on a Windows machine with a Vagrant Ubuntu machine running in it
 - install the resulting Ubuntu 14.04 64bit server iso in vbox (just press enter to start installing after you see the startup screen.)
 -   note: if black screen after it boots up...  press ctrl-alt-f1 to get login prompt 
 - after booting the vbox ubuntu server and logging in, run  sudo ./start.sh
-- sudo reboot  -  to start up virtual box guest additions
-- run  sudo ./bootstrap203.sh which runs import203.sh and django203.sh
+- run  sudo ./12bootstrap203.sh which runs 15import203.sh and 18django203.sh
 - visit in your browser: [ip-address]/menu
 
 

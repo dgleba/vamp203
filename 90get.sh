@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 #
 date
+set -x
+
 
 wget https://raw.githubusercontent.com/dgleba/vamp203/master/12bootstrap203.sh ~
 wget https://raw.githubusercontent.com/dgleba/vamp203/master/15import203.sh ~
