@@ -13,8 +13,8 @@ I am doing this on a Windows machine with a Vagrant Ubuntu machine running in it
       I used 03prep-iso.sh
 - create virtual box  ( I did this from windows) 09createvbox.bat
 - install the resulting Ubuntu 14.04 64bit server iso in vbox (just press enter when it starts.)
-- Start vbox ubuntu server, run  ./start.sh
-- run ./bootstrap203.sh which runs import203.sh and django203.sh
+- Start vbox ubuntu server, run  sudo ./start.sh
+- run  sudo ./bootstrap203.sh which runs import203.sh and django203.sh
 - visit in your browser: [ip-address]/menu
 
 
@@ -22,7 +22,7 @@ I am doing this on a Windows machine with a Vagrant Ubuntu machine running in it
 
 - put a copy of your served web root files in c:\p2\vamp\htdocs
     say for example c:\p2\vamp\htdocs\menu\index.html
-- edit configv1.sh with your passwords. You look at configv1.sh.example.
+- before running 12bootstrap.sh, edit configv1.sh with your passwords. You look at configv1.sh.example.
   
   
 _____________

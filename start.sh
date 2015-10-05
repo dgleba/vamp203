@@ -1,12 +1,12 @@
 #!/bin/bash
-set -e
+set -x
 
 #David Gleba 2015-10-01 03:15PM
 
 
 # set defaults
 #
-mkdir -p _this-vamp203b
+mkdir -p _this-vamp203c
 #default_hostname="$(hostname)"
 default_hostname="vamp203"
 default_domain="vamp203.local"
@@ -18,8 +18,13 @@ tmp="/home/bun/tmp"
 wget https://raw.githubusercontent.com/dgleba/vamp203/master/12bootstrap203.sh
 wget https://raw.githubusercontent.com/dgleba/vamp203/master/15import203.sh
 wget https://raw.githubusercontent.com/dgleba/vamp203/master/18django203.sh
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/configv1.sh.example
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/90get.sh
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/90getb.sh
+wget https://raw.githubusercontent.com/dgleba/vamp203/master/tmp1.sh
+chmod +x ~/*.sh
 
-clear
+#clear
 
 # check for root privilege
 if [ "$(id -u)" != "0" ]; then
@@ -111,6 +116,15 @@ sleep 11
 
 # finish
 sudo updatedb
+
+# mount vbox shares...
+#
+mkdir share203
+#sudo mount -t vboxsf -o uid=$UID,gid=$(id -g) vamp203 ~/share203
+sudo mount -t vboxsf  vamp203 ~/share203
+sudo mkdir -p /var/www/html
+sudo mount -t vboxsf  html /var/www/html
+
 
 echo " DONE; rebooting ... "
 # reboot

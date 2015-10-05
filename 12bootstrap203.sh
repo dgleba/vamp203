@@ -67,13 +67,6 @@ mv composer.phar /usr/local/bin/composer
 sudo apt-get -y install mc
 
 
-# mount vbox shares...
-#
-mkdir share203
-#sudo mount -t vboxsf -o uid=$UID,gid=$(id -g) vamp203 ~/share203
-sudo mount -t vboxsf  vamp203 ~/share203
-sudo mkdir -p /var/www/html
-sudo mount -t vboxsf  html /var/www/html
 
 # comment these out to just run this manually after boot. just need it once. renamed to import198.sh
 #./import198.sh
