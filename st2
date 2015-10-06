@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 #
 date
 set -x
@@ -11,11 +12,11 @@ date
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-notused{
-#a
+notused() {
+echo no
 }
 
-offlinestuff  {
+offlinestuff()  {
 
 #exit 8
 
