@@ -13,6 +13,7 @@ exit 99
 #
 mkdir -p _this-vamp203f
 #default_hostname="$(hostname)"
+userv="bun"
 default_hostname="vamp203"
 default_domain="vamp203.local"
 #default_puppetmaster="foreman.netson.nl"
@@ -60,6 +61,7 @@ if ! grep -q "noninteractive" /proc/cmdline ; then
     stty sane
 
     # ask questions
+    read -ep " please enter your username: " -i "$userv" userv
     read -ep " please enter your preferred hostname: " -i "$default_hostname" hostname
     read -ep " please enter your preferred domain: " -i "$default_domain" domain
 
@@ -91,6 +93,10 @@ apt-get -y purge
 
 apt-get -y install mc
 apt-get -y install locate
+apt-get -y install openssh-server 
+
+#backup ssh server config...
+cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 
 #install virtual box guest additions.
 #http://virtualboxes.org/doc/installing-guest-additions-on-ubuntu/
@@ -117,12 +123,9 @@ sudo ./VBoxLinuxAdditions.run
 $ lsmod | grep -io vboxguest
 sleep 11
 
-
-# remove myself to prevent any unintended changes at a later stage
+# ??  remove myself to prevent any unintended changes at a later stage
 #rm $0
 
-# finish
-updatedb
 
 # add shares to rc.local to start them at boot... grr. this is frustrating....
 cp /etc/rc.local /etc/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
@@ -133,16 +136,18 @@ cp /etc/rc.local ~/backup/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 #http://askubuntu.com/questions/252853/how-to-mount-a-virtualbox-shared-folder-at-startup
 # ggl: ubuntu virtualbox shared folder will not mount on boot
 # http://askubuntu.com/questions/365346/virtualbox-shared-folder-mount-from-fstab-fails-works-once-bootup-is-complete
-sudo sed -i "/^exit 0/i	mount.vboxsf share203 /home/$USER/share203 vboxsf\nmount.vboxsf html /var/www/html vboxsf\nsleep 3\nmount html\nmount share203\n" /etc/rc.local
+sudo sed -i "/^exit 0/isleep 4\nmount.vboxsf share203 /home/$userv/share203 vboxsf\n#mount.vboxsf html /var/www/html vboxsf\nsleep 3\nmount html\nmount share203\n" /etc/rc.local
 
 #add shares to fstab
 cp /etc/fstab /etc/fstab.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 mkdir -p ~/backup
 cp /etc/fstab ~/backup/fstab.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 #not working yet...
-echo "html      /var/www/html  vboxsf   defaults  0   0" >> /etc/fstab
-echo "share203  /home/$USER/share203  vboxsf   defaults,noauto  0   0" >> /etc/fstab
+echo "html      /var/www/html  vboxsf   defaults,noauto  0   0" >> /etc/fstab
+echo "share203  /home/$userv/share203  vboxsf   defaults,noauto  0   0" >> /etc/fstab
 
+# finish
+updatedb
 
 echo " DONE; rebooting ... "
 # reboot
