@@ -1,6 +1,9 @@
 #!/bin/bash
 set -x
 
+ggl: ubuntu virtualbox shared folder will not mount on boot
+exit 99
+
 #Note: vbox shares are not available till it reboots after this start.sh script runs.
 #
 #David Gleba 2015-10-01 03:15PM
@@ -128,15 +131,15 @@ cp /etc/rc.local ~/backup/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 #didn't seem to work with mount command.
 #this works.
 #http://askubuntu.com/questions/252853/how-to-mount-a-virtualbox-shared-folder-at-startup
-sudo sed -i "/^exit 0/i	mount.vboxsf share203 /home/$USER/share203 vboxsf\nmount.vboxsf html /var/www/html vboxsf\n" /etc/rc.local
+sudo sed -i "/^exit 0/i	mount.vboxsf share203 /home/$USER/share203 vboxsf\nmount.vboxsf html /var/www/html vboxsf\nsleep 3\nmount html\nmount share203\n" /etc/rc.local
 
 #add shares to fstab
 cp /etc/fstab /etc/fstab.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 mkdir -p ~/backup
 cp /etc/fstab ~/backup/fstab.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
-#doesn't work...
-#echo "html      /var/www/html  vboxsf   defaults  0   0" >> /etc/fstab
-#echo "share203  /home/$USER/share203  vboxsf   defaults  0   0" >> /etc/fstab
+#not working yet...
+echo "html      /var/www/html  vboxsf   defaults  0   0" >> /etc/fstab
+echo "share203  /home/$USER/share203  vboxsf   defaults,noauto  0   0" >> /etc/fstab
 
 
 echo " DONE; rebooting ... "

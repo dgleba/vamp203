@@ -16,7 +16,7 @@ chmod +x create-unattended-iso.sh
 sudo ./create-unattended-iso.sh
 
 
-offline1 {
+offline1() {
 
 test...
 #wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/bootstrap203.sh
@@ -28,3 +28,5 @@ test...
 
 }
 
+#
+echo end03

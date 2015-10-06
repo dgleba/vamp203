@@ -6,7 +6,7 @@
 #
 # this must sync with vagrant..
 tmp="/var/varvamp/files"  # destination folder to store the final iso file
-hostname="ubuntu"
+hostname="vamp203"
 
 # define spinner function for slow tasks
 # courtesy of http://fitnr.com/showing-a-bash-spinner.html
@@ -84,7 +84,7 @@ done
 
 # ask the user questions about his/her preferences
 read -ep " please enter your preferred timezone: " -i "America/Detroit" timezone
-read -ep " please enter your preferred username: " -i "bun" username
+read -ep " please enter your preferred username: " -i "albe" username
 read -sp " please enter your preferred password: " password
 printf "\n"
 read -sp " confirm your preferred password: " password2
@@ -166,8 +166,8 @@ sed -i "s@{{pwhash}}@$pwhash@g" $tmp/iso_new/preseed/$seed_file
 sed -i "s@{{hostname}}@$hostname@g" $tmp/iso_new/preseed/$seed_file
 sed -i "s@{{timezone}}@$timezone@g" $tmp/iso_new/preseed/$seed_file
 
-#change grub timeout
-sed -i "s@timeout 0@timeout 70@g" $tmp/iso_new/isolinux/isolinux.cfg
+#change grub timeout 
+sed -i "s@timeout 0@timeout 50@g" $tmp/iso_new/isolinux/isolinux.cfg
 
 # calculate checksum for seed file
 seed_checksum=$(md5sum $tmp/iso_new/preseed/$seed_file)

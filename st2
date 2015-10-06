@@ -1,24 +1,27 @@
 #!/usr/bin/env bash
 
 #
-date
+saynow
 set -x
 
 source ./12bootstrap203.sh
 source ./15import198.sh
 source ./18django198.sh
-date
+saynow
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-notused() {
-echo no
+saynow() {
+date
 }
 
 offlinestuff()  {
 
 #exit 8
+sleep 7
+echo offline
+read offa
 
 sudo apt-get remove mysql-server phpmyadmin apache2
 
@@ -52,8 +55,4 @@ sudo mount -t vboxsf  html /var/www/html
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-notused
-
-#
-date
-#
+saynow

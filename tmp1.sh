@@ -21,10 +21,10 @@ sleep 3
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
 
-notused 
+saynow 
 {
 # this function not used.
-echo no
+echo (date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 }
 
 offlinestuff()  {
@@ -121,8 +121,7 @@ sudo mount -t vboxsf  html /var/www/html
 
 }
 
-notused
+saynow
 
 #
-date
-#
+
