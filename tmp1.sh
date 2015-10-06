@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 #
 date
 set -x
@@ -20,8 +21,10 @@ sleep 3
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
 
-notused {
+notused 
+{
 # this function not used.
+echo no
 }
 
 offlinestuff()  {
