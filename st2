@@ -6,14 +6,18 @@ set -x
 sudo ./12bootstrap203.sh
 sudo ./15import198.sh
 sudo ./18django198.sh
-
+date
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+notused{
+#a
+}
 
 offlinestuff  {
 
+#exit 8
 
 sudo apt-get remove mysql-server phpmyadmin apache2
 
@@ -47,6 +51,7 @@ sudo mount -t vboxsf  html /var/www/html
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+notused
 
 #
 date

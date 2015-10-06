@@ -3,16 +3,13 @@
 date
 set -x
 
-
-#add shares to fstab
-cp /etc/fstab /etc/fstab.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
-mkdir -p ~/backup
-cp /etc/fstab ~/backup/fstab.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
-echo "html      /var/www/html  vboxsf   defaults  0   0" >> /etc/fstab
-echo "share203  /home/bun/share203  vboxsf   defaults  0   0" >> /etc/fstab
+sudo sed -i "/^exit 0/i	mount.vboxsf share203 /home/$user/share203 vboxsf\nmount.vboxsf html /var/www/html vboxsf\n" /etc/rc.local
+#http://askubuntu.com/questions/252853/how-to-mount-a-virtualbox-shared-folder-at-startup
 
 
-sleep 3
+
+sleep 9
+
 
 
 
@@ -20,17 +17,11 @@ sleep 3
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
 
-notused {
-# this function not used.
-}
+
 
 offlinestuff()  {
 
-echo offlinestuff-test-echo
 exit 8
-
-sudo sed -i "/^exit 0/i	mount.vboxsf share203 /home/$user/share203 vboxsf\nmount.vboxsf html /var/www/html vboxsf\n" /etc/rc.local
-#http://askubuntu.com/questions/252853/how-to-mount-a-virtualbox-shared-folder-at-startup
 
 
 #add shares to fstab
@@ -117,8 +108,6 @@ sudo mkdir -p /var/www/html
 sudo mount -t vboxsf  html /var/www/html
 
 }
-
-notused
 
 #
 date

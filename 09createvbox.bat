@@ -4,7 +4,7 @@
 :http://zaufi.github.io/administration/2012/08/31/vbox-setup-new-vm/
 :http://www.trimentation.com/wp/?p=100
 
-set vmname=vamp203d
+set vmname=vamp203e
 set vboxm1="C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"
 set vboxm="%VBOX_MSI_INSTALL_PATH%VBoxManage"
 
@@ -31,7 +31,7 @@ set vboxm="%VBOX_MSI_INSTALL_PATH%VBoxManage"
 :worked..
 
 SET _prefix=%COMPUTERNAME:~0,5% 
-IF %_prefix%==redwe  %vboxm% modifyvm %vmname%  --nic1 bridged --bridgeadapter1 "Intel(R) Dual Band Wireless-AC 3160 #2" --nictype1 virtio
+IF %_prefix%==REDWE  %vboxm% modifyvm %vmname%  --nic1 bridged --bridgeadapter1 "Intel(R) Dual Band Wireless-AC 3160 #2" --nictype1 virtio
 
 SET _prefix=%COMPUTERNAME:~0,8% 
 IF %_prefix%==PMDS-3HZ  %vboxm% modifyvm %vmname%  --nic1 bridged --nictype1 virtio --bridgeadapter1 "Intel(R) Ethernet Connection I217-LM"
