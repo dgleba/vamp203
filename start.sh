@@ -11,7 +11,7 @@ exit 99
 
 # set defaults
 #
-mkdir -p _this-vamp203d
+mkdir -p _this-vamp203f
 #default_hostname="$(hostname)"
 default_hostname="vamp203"
 default_domain="vamp203.local"
@@ -124,13 +124,15 @@ sleep 11
 # finish
 updatedb
 
-# add shares to rc.local
+# add shares to rc.local to start them at boot... grr. this is frustrating....
 cp /etc/rc.local /etc/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 mkdir -p ~/backup
 cp /etc/rc.local ~/backup/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 #didn't seem to work with mount command.
-#this works.
+#this works. but then it didn't the next time :(
 #http://askubuntu.com/questions/252853/how-to-mount-a-virtualbox-shared-folder-at-startup
+# ggl: ubuntu virtualbox shared folder will not mount on boot
+# http://askubuntu.com/questions/365346/virtualbox-shared-folder-mount-from-fstab-fails-works-once-bootup-is-complete
 sudo sed -i "/^exit 0/i	mount.vboxsf share203 /home/$USER/share203 vboxsf\nmount.vboxsf html /var/www/html vboxsf\nsleep 3\nmount html\nmount share203\n" /etc/rc.local
 
 #add shares to fstab

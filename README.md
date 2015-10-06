@@ -27,7 +27,8 @@ I am doing this on a Windows machine. (I used a Vagrant Ubuntu machine running i
 - I put a copy of my served web root files in c:\p2\vamp\htdocs  
     say for example c:\p2\vamp\htdocs\menu\index.html   
 	Ask me for a sample website and data. 
-- I had to run `vboxmanage list bridgedifs`  to get a list of adapter names to use in  `--bridgeadapter1 `  --  see 09createvbox.bat.  
+- To set the mac address of your vm in uncomment the appropriate line in `09createvbox.bat` It's approx line 43. Comment it out if you want a random mac address.
+- I had to run `vboxmanage list bridgedifs`  to get a list of adapter names to use in  `--bridgeadapter1 `  --  see `09createvbox.bat`.  
 - match the version of guest additions to your version of virtualbox. See `start.sh` around line 107.    
 - before running `12bootstrap203.sh`, edit `configv1.sh` with your passwords. You can look at the example `configv1.sh.example`.   
   	I put my `configv1.sh` in `c:\p2\vamp\htdocs\vm`   - the script copies it from there.

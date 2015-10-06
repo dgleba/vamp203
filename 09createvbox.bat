@@ -4,7 +4,8 @@
 :http://zaufi.github.io/administration/2012/08/31/vbox-setup-new-vm/
 :http://www.trimentation.com/wp/?p=100
 
-set vmname=vamp203e
+set vmname=vamp203f
+set macaddvamp=08002795526A
 set vboxm1="C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"
 set vboxm="%VBOX_MSI_INSTALL_PATH%VBoxManage"
 
@@ -39,7 +40,7 @@ IF %_prefix%==PMDS-3HZ  %vboxm% modifyvm %vmname%  --nic1 bridged --nictype1 vir
 SET _prefix=%COMPUTERNAME:~0,8% 
 IF %_prefix%==PMDSDATA  %vboxm% modifyvm %vmname%  --nic1 bridged --nictype1 virtio --bridgeadapter1 "Microsoft Hyper-V Network Adapter"
 
-
+%vboxm% modifyvm %vmname% --macaddress1=%macaddvamp%
 
 :shared folders...
 

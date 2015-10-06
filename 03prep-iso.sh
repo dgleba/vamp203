@@ -1,8 +1,8 @@
 #!/bin/bash
 set -x
 
-md /var
-md /var/varvamp
+mdkdir /var
+mdkdir /var/varvamp
 cd /var/varvamp
 mkdir vamp203a
 cd vamp203a
@@ -14,7 +14,6 @@ wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/create-unattende
 chmod +x create-unattended-iso.sh
 #  >>>>>>edit it for tmp and iso source
 sudo ./create-unattended-iso.sh
-
 
 offline1() {
 
