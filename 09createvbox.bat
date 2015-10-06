@@ -1,5 +1,8 @@
 :create vbox empty...  [win]
 
+:Prepare date and temp folders
+set ymd=%date:~12,2%%date:~4,2%%date:~7,2%&set dhms=%date:~12,2%%date:~4,2%%date:~7,2%_%time:~0,2%%time:~3,2%%time:~6,2%
+
 ::ref
 :http://zaufi.github.io/administration/2012/08/31/vbox-setup-new-vm/
 :http://www.trimentation.com/wp/?p=100
@@ -90,7 +93,6 @@ mkdir "C:\Users\%USERNAME%\VirtualBox VMs\%vmname%\"
 %vboxm% startvm %vmname% 
 
 
-
 :# %vboxm% startvm %vmname% --type=headless
 :  %vboxm% controlvm %vmname% poweroff
 :  %vboxm% controlvm %vmname%  acpipowerbutton
@@ -98,6 +100,7 @@ mkdir "C:\Users\%USERNAME%\VirtualBox VMs\%vmname%\"
 :get info from another vm..
 :%vboxm% import -n C:\0\ubuntu201.ova
 
-::%vboxm% export %vmname% --manifest
+::http://crysol.github.io/recipe/2013-10-05/virtualbox-import-export-clone/#.VhQzPxFVhBc
+::%vboxm% export %vmname% -o c:\0\%vmname%_%dhms%.ova --manifest
 
 pause
