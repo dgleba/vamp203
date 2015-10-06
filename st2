@@ -4,9 +4,9 @@
 date
 set -x
 
-sudo ./12bootstrap203.sh
-sudo ./15import198.sh
-sudo ./18django198.sh
+source ./12bootstrap203.sh
+source ./15import198.sh
+source ./18django198.sh
 date
 
 
