@@ -3,6 +3,36 @@
 date
 set -x
 
+sudo sed -i "/^exit 0/i	mount.vboxsf share203 /home/$user/share203 vboxsf\nmount.vboxsf html /var/www/html vboxsf\n" /etc/rc.local
+#http://askubuntu.com/questions/252853/how-to-mount-a-virtualbox-shared-folder-at-startup
+
+
+
+sleep 9
+
+
+
+
+#
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+
+
+
+offlinestuff()  {
+
+exit 8
+
+
+#add shares to fstab
+cp /etc/fstab /etc/fstab.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
+mkdir -p ~/backup
+cp /etc/fstab ~/backup/fstab.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
+echo "html      /var/www/html  vboxsf   defaults  0   0" >> /etc/fstab
+echo "share203  /home/bun/share203  vboxsf   defaults  0   0" >> /etc/fstab
+
+
+
 read -n1 -t4 -p "Press the ENTER key to keep going or wait some seconds....."
 
 #copy config from website files...
@@ -21,21 +51,6 @@ if [ ! -f /var/www/html/z,index.html ]; then
 fi
 
 sudo cp /var/www/html/vm/configv1.sh ~
-
-sleep 9
-
-
-
-
-#
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#
-
-
-
-offlinestuff()  {
-
-
 
 
 # add shares to rc.local

@@ -166,6 +166,9 @@ sed -i "s@{{pwhash}}@$pwhash@g" $tmp/iso_new/preseed/$seed_file
 sed -i "s@{{hostname}}@$hostname@g" $tmp/iso_new/preseed/$seed_file
 sed -i "s@{{timezone}}@$timezone@g" $tmp/iso_new/preseed/$seed_file
 
+#change grub timeout
+sed -i "s@timeout 0@timeout 70@g" $tmp/iso_new/isolinux/isolinux.cfg
+
 # calculate checksum for seed file
 seed_checksum=$(md5sum $tmp/iso_new/preseed/$seed_file)
 

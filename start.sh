@@ -15,7 +15,7 @@ default_domain="vamp203.local"
 #default_puppetmaster="foreman.netson.nl"
 
 mkdir -p tmp
-tmp="/home/bun/tmp"
+tmp="/home/$USER/tmp"
 
 wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/12bootstrap203.sh -P ~
 wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/15import203.sh -P ~
@@ -119,13 +119,24 @@ sleep 11
 #rm $0
 
 # finish
-sudo updatedb
+updatedb
 
 # add shares to rc.local
-sudo cp /etc/rc.local /etc/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
+cp /etc/rc.local /etc/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 mkdir -p ~/backup
-sudo cp /etc/rc.local ~/backup/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
-sudo sed -i "/^exit 0/i	sudo mount -t vboxsf  share203 ~/share203\nsudo mount -t vboxsf  html /var/www/html\n" /etc/rc.local
+cp /etc/rc.local ~/backup/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
+#didn't seem to work with mount command.
+#this works.
+#http://askubuntu.com/questions/252853/how-to-mount-a-virtualbox-shared-folder-at-startup
+sudo sed -i "/^exit 0/i	mount.vboxsf share203 /home/$USER/share203 vboxsf\nmount.vboxsf html /var/www/html vboxsf\n" /etc/rc.local
+
+#add shares to fstab
+cp /etc/fstab /etc/fstab.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
+mkdir -p ~/backup
+cp /etc/fstab ~/backup/fstab.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
+#doesn't work...
+#echo "html      /var/www/html  vboxsf   defaults  0   0" >> /etc/fstab
+#echo "share203  /home/$USER/share203  vboxsf   defaults  0   0" >> /etc/fstab
 
 
 echo " DONE; rebooting ... "
