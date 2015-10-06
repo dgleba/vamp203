@@ -16,9 +16,9 @@ chmod +x create-unattended-iso.sh
 sudo ./create-unattended-iso.sh
 
 
-function offline {
+offline1 {
 
-#test...
+test...
 #wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/bootstrap203.sh
 #wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/import203.sh
 #wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/django203.sh
