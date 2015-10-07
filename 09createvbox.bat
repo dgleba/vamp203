@@ -102,6 +102,6 @@ mkdir "C:\Users\%USERNAME%\VirtualBox VMs\%vmname%\"
 :%vboxm% import -n C:\0\ubuntu201.ova
 
 ::http://crysol.github.io/recipe/2013-10-05/virtualbox-import-export-clone/#.VhQzPxFVhBc
-::%vboxm% export %vmname% -o "c:\0\%vmname%_%ymd%-%random%.ova" --manifest
+::%vboxm% export %vmname% -o "c:\0\%vmname%_%ymd%-%macaddvamp%-rand%random%.ova" --manifest
 
 pause
