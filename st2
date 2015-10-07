@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
 
 #
-saynow
 set -x
-
-source ./12bootstrap203.sh
-source ./15import198.sh
-source ./18django198.sh
-saynow
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -54,5 +48,8 @@ sudo mount -t vboxsf  html /var/www/html
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 saynow
+source ./12bootstrap203.sh
+source ./15import203.sh
+source ./18django203.sh
+date

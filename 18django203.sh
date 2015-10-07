@@ -93,7 +93,7 @@ djangosoft()
   #moved to bootstrap.sh..
   #sudo pip install django-admin-bootstrapped
   # got error - use apt-get instead.......  sudo pip install mysql-python
-  #sudo apt-get install python-mysqldb
+  #sudo apt-get -y install python-mysqldb
 }
 
 

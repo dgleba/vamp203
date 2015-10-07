@@ -18,7 +18,7 @@ I am doing this on a Windows machine. (I used a Vagrant Ubuntu machine running i
 	`sudo ./start.sh`  
   note: if black screen after it boots up after installing...  press ctrl-alt-f1 to get login prompt 
 - run  `sudo ./12bootstrap203.sh`   
-    which runs 15import203.sh and 18django203.sh
+    then run 15import203.sh and 18django203.sh  [or run sudo ./st2 , which will run all three.]
 - visit in your browser: [ip-address]/menu or any other address that leads to the web content you placed in c:\p2\vamp\htdocs  
   type `ifconfig` in the server console to get the ip of the machine.
 

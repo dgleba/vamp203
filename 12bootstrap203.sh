@@ -77,9 +77,9 @@ sudo apt-get -y install phpmyadmin
 sudo apt-get -y install python-pip libapache2-mod-wsgi
 sudo pip install django
 
-#sudo pip install django-admin-bootstrapped
+sudo pip install django-admin-bootstrapped
 # got error - use apt-get instead.......  sudo pip install mysql-python
-#  sudo apt-get install python-mysqldb
+sudo apt-get  -y install python-mysqldb
 
 
 

@@ -23,8 +23,7 @@ else
 fi
 
 
-
-echo end1
+echo endmntv
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -63,13 +62,9 @@ sudo mkdir -p /var/www/html
 sudo mount -t vboxsf  html /var/www/html
 
 END
-
 }
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
 #
 date
 #
