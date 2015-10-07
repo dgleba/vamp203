@@ -11,7 +11,7 @@ set -x
 #
 mkdir -p _this-vamp203f
 #default_hostname="$(hostname)"
-userv="bun"
+userv="albe"
 default_hostname="vamp203"
 default_domain="vamp203.local"
 #default_puppetmaster="foreman.netson.nl"
@@ -29,6 +29,9 @@ wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/tmp1.sh -P ~
 wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/st2 -P ~
 wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/mntv -P ~
 chmod +x ~/*.sh
+chmod +x ~/st2
+chmod +x ~/mntv
+
 
 #clear
 
@@ -59,7 +62,7 @@ if ! grep -q "noninteractive" /proc/cmdline ; then
     stty sane
 
     # ask questions
-    read -ep " please enter your username: " -i "$userv" userv
+    read -ep " please enter the username you are currently logged in as: " -i "$userv" userv
     read -ep " please enter your preferred hostname: " -i "$default_hostname" hostname
     read -ep " please enter your preferred domain: " -i "$default_domain" domain
 

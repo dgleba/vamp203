@@ -9,7 +9,8 @@ I am doing this on a Windows machine. (I used a Vagrant Ubuntu machine running i
 - see preparation below.
 - Install virtualbox
 - create unattended ubuntu 14.04 server iso ( I used a vagrant Ubuntu VM to create it. vamp198e)   
-      See instructions for unattended iso maker below...  
+      See instructions for unattended iso maker below...   
+	    vagrant share..   config.vm.synced_folder "/var/varvamp", "/var/varvamp"
       I used `03prep-iso.sh`  
 - create the virtual box  ( I did this from windows)  
   `09createvbox.bat`
@@ -18,8 +19,8 @@ I am doing this on a Windows machine. (I used a Vagrant Ubuntu machine running i
 	`sudo ./start.sh`  
   note: if black screen after it boots up after installing...  press ctrl-alt-f1 to get login prompt 
 - run  `sudo ./12bootstrap203.sh`   
-    then run 15import203.sh and 18django203.sh  [or run sudo ./st2 , which will run all three.]
-- visit in your browser: [ip-address]/menu or any other address that leads to the web content you placed in c:\p2\vamp\htdocs  
+    then run 15import203.sh and `18django203.sh`  [or run `sudo ./st2` , which will run all three.]
+- visit in your browser: `[ip-address]/menu` or any other address that leads to the web content you placed in `c:\p2\vamp\htdocs`  
   type `ifconfig` in the server console to get the ip of the machine.
 
 ## Preparation

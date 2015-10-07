@@ -90,7 +90,7 @@ d-i partman-partitioning/confirm_write_new_label            boolean     true
 d-i grub-installer/only_debian                              boolean     true
 d-i grub-installer/with_other_os                            boolean     true
 # Wait for x seconds in grub
-d-i	grub-installer/timeout                                  string      9
+d-i	grub-installer/timeout                                  string      5
 
 # finish installation
 
