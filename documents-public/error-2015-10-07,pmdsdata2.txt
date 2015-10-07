@@ -1,0 +1,134 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Title:  . ubuntu guest vm will not boot in pmdsdata2 windows server 2012 guest.
+
+-----------------------2015-10-07[Oct-Wed]11-26AM
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+in 09createvbox.bat
+
+see https://github.com/dgleba/vamp203/blob/master/09createvbox.bat
+
+error:
+
+VT-x/AMD-V hardware acceleration is not available on your system. Your 64-bit guest will fail to detect a 64-bit CPU and will not be able to boot.
+
+_____________
+
+This says I cannot run virtualbox guests in a guest.
+
+https://www.virtualbox.org/ticket/4032
+
+ggl: enable vt-x in hyper v windows guest
+
+_____________
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Title:  .
+-----------------------2015-10-07[Oct-Wed]11-39AM
+
+
+log of 90createvbox.bat 
+_____________
+
+
+
+C:\p2\vboxyard\vamp203>set ymd=151007  & set dhms=151007_112432
+
+C:\p2\vboxyard\vamp203>set vmname=vamp203g
+
+C:\p2\vboxyard\vamp203>set macaddvamp=08002795526D
+
+C:\p2\vboxyard\vamp203>set vboxm1="C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"
+
+C:\p2\vboxyard\vamp203>set vboxm="C:\Program Files\Oracle\VirtualBox\VBoxManage"
+
+C:\p2\vboxyard\vamp203>"C:\Program Files\Oracle\VirtualBox\VBoxManage" createvm --name vamp203g --ostype Ubuntu_64 --regis
+ter
+Virtual machine 'vamp203g' is created and registered.
+UUID: c11009bb-7d76-417e-88df-5604e2229d3a
+Settings file: 'C:\Users\dgleba\VirtualBox VMs\vamp203g\vamp203g.vbox'
+
+C:\p2\vboxyard\vamp203>"C:\Program Files\Oracle\VirtualBox\VBoxManage" modifyvm vamp203g --memory 768 --cpus 1  --acpi on
+  --clipboard bidirectional
+
+C:\p2\vboxyard\vamp203>"C:\Program Files\Oracle\VirtualBox\VBoxManage" list bridgedifs
+Name:            Microsoft Hyper-V Network Adapter
+GUID:            a7e21165-ca11-4cf7-802e-45b2af65edb5
+DHCP:            Enabled
+IPAddress:       10.4.10.180
+NetworkMask:     255.255.3.0
+IPV6Address:     fe80:0000:0000:0000:2860:21a2:de33:831b
+IPV6NetworkMaskPrefixLength: 64
+HardwareAddress: 00:15:5d:01:d4:48
+MediumType:      Ethernet
+Status:          Up
+VBoxNetworkName: HostInterfaceNetworking-Microsoft Hyper-V Network Adapter
+
+
+C:\p2\vboxyard\vamp203>SET _prefix=PMDSD
+
+C:\p2\vboxyard\vamp203>IF PMDSD == REDWE "C:\Program Files\Oracle\VirtualBox\VBoxManage" modifyvm vamp203g  --nic1 bridged
+ --bridgeadapter1 "Intel(R) Dual Band Wireless-AC 3160 #2" --nictype1 virtio
+
+C:\p2\vboxyard\vamp203>SET _prefix=PMDSDATA
+
+C:\p2\vboxyard\vamp203>IF PMDSDATA == PMDS-3HZ "C:\Program Files\Oracle\VirtualBox\VBoxManage" modifyvm vamp203g  --nic1 b
+ridged --nictype1 virtio --bridgeadapter1 "Intel(R) Ethernet Connection I217-LM"
+
+C:\p2\vboxyard\vamp203>SET _prefix=PMDSDATA
+
+C:\p2\vboxyard\vamp203>IF PMDSDATA == PMDSDATA "C:\Program Files\Oracle\VirtualBox\VBoxManage" modifyvm vamp203g  --nic1 b
+ridged --nictype1 virtio --bridgeadapter1 "Microsoft Hyper-V Network Adapter"
+
+C:\p2\vboxyard\vamp203>"C:\Program Files\Oracle\VirtualBox\VBoxManage" modifyvm vamp203g --macaddress1=08002795526D
+
+C:\p2\vboxyard\vamp203>"C:\Program Files\Oracle\VirtualBox\VBoxManage" sharedfolder remove vamp203g --name share203
+VBoxManage.exe: error: Could not find a shared folder named 'share203'
+VBoxManage.exe: error: Details: code VBOX_E_OBJECT_NOT_FOUND (0x80bb0001), component SessionMachine, interface IMachine, c
+allee IUnknown
+VBoxManage.exe: error: Context: "RemoveSharedFolder(Bstr(name).raw())" at line 1086 of file VBoxManageMisc.cpp
+
+C:\p2\vboxyard\vamp203>mkdir c:\var\share203
+A subdirectory or file c:\var\share203 already exists.
+
+C:\p2\vboxyard\vamp203>"C:\Program Files\Oracle\VirtualBox\VBoxManage" sharedfolder add vamp203g --name share203 --hostpat
+h c:/var/share203/
+
+C:\p2\vboxyard\vamp203>"C:\Program Files\Oracle\VirtualBox\VBoxManage" sharedfolder add vamp203g --name html --hostpath c:
+/p2/vamp/htdocs
+
+C:\p2\vboxyard\vamp203>cd \temp
+
+C:\temp>mkdir "C:\Users\dgleba\VirtualBox VMs\vamp203g\"
+A subdirectory or file C:\Users\dgleba\VirtualBox VMs\vamp203g\ already exists.
+
+C:\temp>"C:\Program Files\Oracle\VirtualBox\VBoxManage" createhd --filename "C:\Users\dgleba\VirtualBox VMs\vamp203g\vamp2
+03g.vmdk" --size 10240
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Medium created. UUID: a46e6d73-c21e-4b0c-a169-ca8d6f234ef5
+
+C:\temp>"C:\Program Files\Oracle\VirtualBox\VBoxManage"  storagectl vamp203g --name storage --add sata  --controller Intel
+AHCI
+
+C:\temp>"C:\Program Files\Oracle\VirtualBox\VBoxManage" storageattach vamp203g --storagectl storage --port 1 --medium "C:\
+Users\dgleba\VirtualBox VMs\vamp203g\vamp203g.vmdk" --type hdd
+
+C:\temp>"C:\Program Files\Oracle\VirtualBox\VBoxManage" storageattach vamp203g --storagectl storage --port 2 --medium C:\v
+ar\varvamp\files\ubuntu-14.04.3-server-amd64-unattended.iso --type dvddrive
+
+C:\temp>"C:\Program Files\Oracle\VirtualBox\VBoxManage" modifyvm vamp203g --boot1 dvd
+
+C:\temp>"C:\Program Files\Oracle\VirtualBox\VBoxManage" startvm vamp203g
+Waiting for VM "vamp203g" to power on...
+VM "vamp203g" has been successfully started.
+
+C:\temp>pause
+Press any key to continue . . .
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
