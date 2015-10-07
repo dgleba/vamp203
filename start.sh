@@ -12,8 +12,8 @@ set -x
 mkdir -p _this-vamp203h
 #default_hostname="$(hostname)"
 userv="albe"
-default_hostname="vamp203"
-default_domain="vamp203.local"
+default_hostname="vamp203h"
+default_domain="vamp203h.local"
 #default_puppetmaster="foreman.netson.nl"
 
 mkdir -p tmp

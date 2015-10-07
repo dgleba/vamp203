@@ -18,7 +18,7 @@ else
     echo "not, so mount it"
 	sudo mount -t vboxsf  share203 ~/share203
 fi
-#sudo mount -t vboxsf -o uid=$UID,gid=$(id -g) vamp203 ~/share203
+#sudo mount -t vboxsf -o uid=$UID,gid=$(id -g) vampx ~/share203
 #
 sudo mkdir -p /var/www/html
 if mount | grep /var/www/html > /dev/null; then
