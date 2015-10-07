@@ -8,8 +8,8 @@ set ymd=%date:~12,2%%date:~4,2%%date:~7,2%&set dhms=%date:~12,2%%date:~4,2%%date
 :http://www.trimentation.com/wp/?p=100
 
 :set env variables... Edit these to your liking.
-: f failed to install due to archive unreachable.
-set vmname=vamp203d
+:  vamp203f failed to install due to archive unreachable. i think permissions at work.
+set vmname=vamp203f
 set macaddvamp=08002795526A
 :
 set vboxm1="C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"

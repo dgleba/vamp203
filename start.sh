@@ -1,8 +1,6 @@
 #!/bin/bash
 set -x
 
-ggl: ubuntu virtualbox shared folder will not mount on boot
-exit 99
 
 #Note: vbox shares are not available till it reboots after this start.sh script runs.
 #
@@ -136,7 +134,7 @@ cp /etc/rc.local ~/backup/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 #http://askubuntu.com/questions/252853/how-to-mount-a-virtualbox-shared-folder-at-startup
 # ggl: ubuntu virtualbox shared folder will not mount on boot
 # http://askubuntu.com/questions/365346/virtualbox-shared-folder-mount-from-fstab-fails-works-once-bootup-is-complete
-sudo sed -i "/^exit 0/isleep 4\nmount.vboxsf share203 /home/$userv/share203 vboxsf\n#mount.vboxsf html /var/www/html vboxsf\nsleep 3\nmount html\nmount share203\n" /etc/rc.local
+sudo sed -i "/^exit 0/isleep 6\nmount.vboxsf share203 /home/$userv/share203 vboxsf\n#mount.vboxsf html /var/www/html vboxsf\nsleep 4\nmount html\nmount share203\n" /etc/rc.local
 
 #add shares to fstab
 cp /etc/fstab /etc/fstab.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
