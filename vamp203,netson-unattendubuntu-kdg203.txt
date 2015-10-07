@@ -1,5 +1,34 @@
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Title:  .hyperv
+-----------------------2015-10-07[Oct-Wed]16-34PM
+
+Last login: Wed Oct  7 16:22:36 2015 from 10.4.10.243
+albe@vamp203i:~$ ifconfig
+eth0      Link encap:Ethernet  HWaddr 00:15:5d:01:d2:61
+          inet addr:10.4.10.250  Bcast:10.4.63.255  Mask:255.255.192.0
+          inet6 addr: fe80::215:5dff:fe01:d261/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:15840 errors:0 dropped:2 overruns:0 frame:0
+          TX packets:124 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:2748517 (2.7 MB)  TX bytes:16024 (16.0 KB)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+albe@vamp203i:~$
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Title:  . error mounting shares
 
 
