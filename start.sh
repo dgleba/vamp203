@@ -126,6 +126,9 @@ sleep 11
 
 
 # add shares to rc.local to start them at boot... grr. this is frustrating....
+mkdir -p /home/$userv/share203
+mkdir -p /var/www/html
+
 cp /etc/rc.local /etc/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 mkdir -p ~/backup
 cp /etc/rc.local ~/backup/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
@@ -143,6 +146,36 @@ cp /etc/fstab ~/backup/fstab.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 #not working yet...
 echo "html      /var/www/html  vboxsf   defaults,noauto  0   0" >> /etc/fstab
 echo "share203  /home/$userv/share203  vboxsf   defaults,noauto  0   0" >> /etc/fstab
+
+#create upstart for mounting shared folders...
+sudo tee /etc/init/mountvshare.conf <<EOF
+description "Test mount"
+author      "Your Name"
+
+start on filesystem or runlevel [2345]
+stop on shutdown
+
+script
+
+    sleep 8
+    mount html
+    mount share203
+
+end script
+
+pre-start script
+    echo "[`date`] mountvshare start...." >> /var/log/mountvshare.log
+end script
+
+pre-stop script
+    rm /var/run/mountvshare.pid
+    echo "[`date`] .... stop mountvshare" >> /var/log/mountvshare.log
+end script
+EOF
+#
+sudo service mountvshare restart
+
+
 
 # finish
 updatedb

@@ -16,6 +16,7 @@ stop on shutdown
 
 script
 
+    sleep 8
     mount html
     mount share203
 
@@ -36,8 +37,8 @@ vshare
 vshare2 
 {
 # vshare info
+ls /etc/init/m* -la
 cat /etc/init/mountvshare.conf 
-ls /etc/init m* -la
 init-checkconf /etc/init/mountvshare.conf 
 sudo service mountvshare restart
 
