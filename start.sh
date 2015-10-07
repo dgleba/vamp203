@@ -118,7 +118,7 @@ cd /mnt
 sudo ./VBoxLinuxAdditions.run
 
 # check loaded modules
-$ lsmod | grep -io vboxguest
+lsmod | grep -io vboxguest
 sleep 11
 
 # ??  remove myself to prevent any unintended changes at a later stage
@@ -126,8 +126,6 @@ sleep 11
 
 
 # add shares to rc.local to start them at boot... grr. this is frustrating....
-mkdir -p /home/$userv/share203
-mkdir -p /var/www/html
 
 cp /etc/rc.local /etc/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 mkdir -p ~/backup
@@ -137,7 +135,11 @@ cp /etc/rc.local ~/backup/rc.local.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 #http://askubuntu.com/questions/252853/how-to-mount-a-virtualbox-shared-folder-at-startup
 # ggl: ubuntu virtualbox shared folder will not mount on boot
 # http://askubuntu.com/questions/365346/virtualbox-shared-folder-mount-from-fstab-fails-works-once-bootup-is-complete
-sudo sed -i "/^exit 0/isleep 6\nmount.vboxsf share203 /home/$userv/share203 vboxsf\n#mount.vboxsf html /var/www/html vboxsf\nsleep 4\nmount html\nmount share203\n" /etc/rc.local
+# this is not reliable... use upstart mountvshare.conf instead.
+#sudo sed -i "/^exit 0/isleep 6\nmount.vboxsf share203 /home/$userv/share203 vboxsf\n#mount.vboxsf html /var/www/html vboxsf\nsleep 4\nmount html\nmount share203\n" /etc/rc.local
+
+mkdir -p /home/$userv/share203
+mkdir -p /var/www/html
 
 #add shares to fstab
 cp /etc/fstab /etc/fstab.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
@@ -173,7 +175,7 @@ pre-stop script
 end script
 EOF
 #
-sudo service mountvshare restart
+sudo service mountvshare start
 
 
 
