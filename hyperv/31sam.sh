@@ -16,8 +16,8 @@ zunused=1
 saynow
 set -x
 source ./11set.sh
-source ./15.sh
-source ./21dj.sh
+source ./12.sh
+source ./215dj.sh
 source ./25imp.sh
 source ./31sam.sh
 
