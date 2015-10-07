@@ -1,5 +1,81 @@
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Title:  . error mounting shares
+
+
+
+-----------------------2015-10-07[Oct-Wed]13-33PM
+
+
+Last login: Wed Oct  7 13:23:06 2015 from 10.4.10.243
+albe@vamp203:~$ df
+Filesystem                   1K-blocks    Used Available Use% Mounted on
+/dev/mapper/vamp203--vg-root   9165896 1185928   7491316  14% /
+none                                 4       0         4   0% /sys/fs/cgroup
+udev                            368360       4    368356   1% /dev
+tmpfs                            75904     376     75528   1% /run
+none                              5120       8      5112   1% /run/lock
+none                            379500       0    379500   0% /run/shm
+none                            102400       0    102400   0% /run/user
+/dev/sda1                       240972   38821    189710  17% /boot
+albe@vamp203:~$
+
+albe@vamp203:~$ sudo mount html
+/sbin/mount.vboxsf: mounting failed with the error: No such device
+
+_____________
+
+
+
+albe@vamp203:~$ sudo service mountvshare status
+[sudo] password for albe:
+mountvshare stop/waiting
+
+albe@vamp203:~$ sudo service mountvshare restart
+stop: Unknown instance:
+mountvshare start/running, process 1297
+albe@vamp203:~$
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Title:  .
+-----------------------2015-10-07[Oct-Wed]12-49PM
+
+in vamp198e
+start vm
+ssh into it
+I am using windows for this.
+
+5 min
+install virtualbox
+
+8 min
+create unattended ubuntu 14.04 server iso
+
+9 min
+create virtual box  in windows?
+create shared folders for /var/vamp/htdocs > /var/www/html
+create shared folders for /var/vamp203 > ?
+install server iso in vbox unattended
+
+6 min
+in the vbox ubuntu server, ./start.sh
+
+4 min
+./bootstrap203.sh 
+    bootstrap runs import203.sh django203.sh
+
+visit in browser ipaddr/menu
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Title:  .
 -----------------------2015-10-06[Oct-Tue]13-23PM
 

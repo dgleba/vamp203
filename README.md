@@ -25,7 +25,9 @@ I am doing this on a Windows machine. (I used a Vagrant Ubuntu machine running i
 
 ## Preparation
 
-- I put a copy of my served web root files in c:\p2\vamp\htdocs  
+- create basic folders. `c:\var\varvamp`, `c:\var\varvamp\files`, `c:\var\share203`, `c:\p2\vamp\htdocs`   
+- put iso here, C:\var\varvamp\files\ubuntu-14.04.3-server-amd64.iso, or let it download it for you.
+- I put a copy of my served web root files in `c:\p2\vamp\htdocs`  
     say for example c:\p2\vamp\htdocs\menu\index.html   
 	Ask me for a sample website and data. 
 - To set the mac address of your vm in uncomment the appropriate line in `09createvbox.bat` It's approx line 43. Comment it out if you want a random mac address.
@@ -39,6 +41,7 @@ I am doing this on a Windows machine. (I used a Vagrant Ubuntu machine running i
 ## Examples of code I served up.
 
 - http://10.4.10.249:8985/django161c/admin/
+- http://10.4.10.249/dgnote130/
 - http://10.4.10.249/menu2/
 - http://10.4.10.249/menu/
 - http://10.4.10.249/test2/

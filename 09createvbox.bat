@@ -9,8 +9,9 @@ set ymd=%date:~12,2%%date:~4,2%%date:~7,2%&set dhms=%date:~12,2%%date:~4,2%%date
 
 :set env variables... Edit these to your liking.
 :  vamp203f failed to install due to archive unreachable. i think permissions at work.
-set vmname=vamp203f
-set macaddvamp=08002795526A
+set vmname=vamp203h
+:set macaddvamp=08002795526A
+set macaddvamp=08002795527A
 :
 set vboxm1="C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"
 set vboxm="%VBOX_MSI_INSTALL_PATH%VBoxManage"
@@ -101,6 +102,6 @@ mkdir "C:\Users\%USERNAME%\VirtualBox VMs\%vmname%\"
 :%vboxm% import -n C:\0\ubuntu201.ova
 
 ::http://crysol.github.io/recipe/2013-10-05/virtualbox-import-export-clone/#.VhQzPxFVhBc
-::%vboxm% export %vmname% -o "c:\0\%vmname%_%dhms%.ova" --manifest
+::%vboxm% export %vmname% -o "c:\0\%vmname%_%ymd%-%random%.ova" --manifest
 
 pause

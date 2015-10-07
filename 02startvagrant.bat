@@ -4,7 +4,8 @@ call vggs.bat
 timeout 9
 
 
-cd C:\n\Dropbox\csd\serve\vagrantyard\vamp198f
+:use 198e at work.
+cd C:\n\Dropbox\csd\serve\vagrantyard\vamp198e
 
 ::if redwe, then ...
 SET _prefix=%COMPUTERNAME:~0,5% 
