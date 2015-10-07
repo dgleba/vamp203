@@ -182,9 +182,6 @@ sudo service mountvshare start
 
 
 
-# finish
-updatedb
-
 echo " DONE; rebooting ... "
 # reboot
 reboot

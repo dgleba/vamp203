@@ -82,6 +82,33 @@ sudo pip install django-admin-bootstrapped
 sudo apt-get  -y install python-mysqldb
 
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+# install ftp server...
+#    https://help.ubuntu.com/lts/serverguide/ftp-server.html
+apt-get -y install vsftpd
+# uncomment #write_enable=YES
+sudo sed -i "s@#write_enable=YES@write_enable=YES@g" /etc/vsftpd.conf
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# install sendmail...
+#    http://askubuntu.com/questions/47609/how-to-have-my-php-send-mail
+sudo apt-get -y install ssmtp
+
+#  edit /etc/ssmtp/ssmtp.conf -- edit  mailhub=mail
+sudo sed -i "s@mailhub=mail@mailhub=MESG01.stackpole.ca@g"  /etc/ssmtp/ssmtp.conf
+
+# edit /etc/php5/apache2/php.ini
+# sudo nano /etc/php5/apache2/php.ini
+sudo sed -i "s@;sendmail_path =@sendmail_path = /usr/sbin/sendmail -t@g"  /etc/php5/apache2/php.ini
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 
 #	# setup hosts file
 #	VHOST=$(cat <<EOF

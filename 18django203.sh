@@ -115,6 +115,7 @@ date
 #djangosoft
 vhost8985
 apache1
+updatedb
 
 date
 
