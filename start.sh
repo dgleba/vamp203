@@ -9,7 +9,7 @@ set -x
 
 # set defaults
 #
-mkdir -p _this-vamp203f
+mkdir -p _this-vamp203g
 #default_hostname="$(hostname)"
 userv="albe"
 default_hostname="vamp203"
