@@ -13,11 +13,11 @@ I am doing this on a Windows machine. (I used a Vagrant Ubuntu machine running i
 	    vagrant share..   config.vm.synced_folder "/var/varvamp", "/var/varvamp"
       I used `03prep-iso.sh`  
 - create the virtual box  ( I did this from windows)  
-  `09createvbox.bat`
-- install the resulting Ubuntu 14.04 64bit server iso in vbox (just press enter to start installing after you see the startup screen.)  
-- after booting the vbox ubuntu server and logging in, run   
-	`sudo ./start.sh`  
-  note: if black screen after it boots up after installing...  press ctrl-alt-f1 to get login prompt 
+  `09createvbox.bat`  
+   This will also do an unattended install of the resulting Ubuntu 14.04 64bit server iso in vbox.    
+- after the vbox ubuntu server boots, log in, run   
+	`sudo ./start.sh`   
+   note: if black screen after it boots up after installing...  press ctrl-alt-f1 to get login prompt 
 - run  `sudo ./12bootstrap203.sh`   
     then run 15import203.sh and `18django203.sh`  [or run `sudo ./st2` , which will run all three.]
 - visit in your browser: `[ip-address]/menu` or any other address that leads to the web content you placed in `c:\p2\vamp\htdocs`  
