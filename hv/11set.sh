@@ -1,13 +1,13 @@
 #!/bin/bash
 set -x
-
+cd
 # set defaults
 #
-mkdir -p _this-vamp203h
+mkdir -p _this-vamp203i
 #default_hostname="$(hostname)"
 userv="albe"
-default_hostname="vamp203h"
-default_domain="vamp203h.local"
+default_hostname="vamp203i"
+default_domain="vamp203i.local"
 
 mkdir -p tmp
 tmp="/home/$userv/tmp"
@@ -38,12 +38,23 @@ apt-get -y purge
 apt-get -y install mc
 apt-get -y install locate
 apt-get -y install openssh-server 
+apt-get -y install samba 
 
 #backup ssh server config...
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 
-mkdir -p /home/$userv/share203
-mkdir -p /var/www/html
+mkdir -p /home/$userv/webwork
+
+# install apache 2.5 and php 5.5
+sudo apt-get install -y apache2
+sudo apt-get install -y php5
+
+sudo apt-get -y install python-pip libapache2-mod-wsgi
+sudo pip install django
+sudo pip install django-admin-bootstrapped
+
+# install git
+sudo apt-get -y install git
 
 echo " DONE; rebooting ... "
 # reboot

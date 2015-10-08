@@ -6,7 +6,7 @@
 #
 # this must sync with vagrant..
 tmp="/var/varvamp/files"  # destination folder to store the final iso file
-hostname="vamp203"
+hostname="vamp203k"
 
 # define spinner function for slow tasks
 # courtesy of http://fitnr.com/showing-a-bash-spinner.html

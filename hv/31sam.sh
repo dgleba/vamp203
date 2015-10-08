@@ -2,6 +2,9 @@
 
 smb() {
 
+#need configv1.sh.......
+source ~/configv1.sh
+
 sudo apt-get -y install samba
 
 #backup server config...
@@ -10,21 +13,35 @@ cp /etc/samba/smb.conf /etc/samba/smb.conf.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z
 cp /etc/samba/smb.conf    ~backup/smb.conf.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 
 cd
-mkdir share1
+mkdir webwork
 
 cat <<EOF >> /etc/samba/smb.conf
 # -------------------------------------------------------------------
-[share1]
-path = /home/dg/share1
+# shares
+#
+[webwork]
+path = /home/$userv/webwork
 browsable =yes
 writable = yes
 guest ok = no
 read only = no
-valid users = dg
-# sudo smbpasswd -a dg
+valid users = $userv
+# sudo smbpasswd -a $userv
 # http://www.cyberciti.biz/tips/how-do-i-set-permissions-to-samba-shares.html
 # https://www.howtoforge.com/samba-server-ubuntu-14.04-lts
 #
+[html]
+path = /var/www/html
+browsable =yes
+writable = yes
+guest ok = no
+read only = no
+valid users = $userv
+# sudo smbpasswd -a $userv
+# http://www.cyberciti.biz/tips/how-do-i-set-permissions-to-samba-shares.html
+# https://www.howtoforge.com/samba-server-ubuntu-14.04-lts
+#
+
 EOF
 
 sudo service smbd restart

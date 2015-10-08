@@ -10,9 +10,10 @@ set ymd=%date:~12,2%%date:~4,2%%date:~7,2%&set dhms=%date:~12,2%%date:~4,2%%date
 :set env variables... Edit these to your liking.
 :  vamp203f failed to install due to archive unreachable. i think permissions at work.
 : vamp203i used on hyperv 2015-10-07 - 10.4.10.250 - 00.15.5d.01.d2.61
-set vmname=vamp203j
+set vmname=vamp203k
+:: get random mac addr coment these out...
 :set macaddvamp=08002795526A
-set macaddvamp=08002795527B
+:set macaddvamp=08002795527B
 :
 set vboxm1="C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"
 set vboxm="%VBOX_MSI_INSTALL_PATH%VBoxManage"
@@ -52,7 +53,7 @@ IF %_prefix%==PMDS-3HZ  %vboxm% modifyvm %vmname%  --nic1 bridged --nictype1 vir
 SET _prefix=%COMPUTERNAME:~0,8% 
 IF %_prefix%==PMDSDATA  %vboxm% modifyvm %vmname%  --nic1 bridged --nictype1 virtio --bridgeadapter1 "Microsoft Hyper-V Network Adapter"
 
-%vboxm% modifyvm %vmname% --macaddress1=%macaddvamp%
+::%vboxm% modifyvm %vmname% --macaddress1=%macaddvamp%
 
 ::not using NAT...
 :eg:

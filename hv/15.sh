@@ -18,9 +18,6 @@ sleep 9
 
 source ~/configv1.sh
 
-# install apache 2.5 and php 5.5
-sudo apt-get install -y apache2
-sudo apt-get install -y php5
 
 # install mysql and give password to installer
 sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password $PASSWORD"
@@ -39,10 +36,6 @@ sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/mysql/app-pass password $
 sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2"
 sudo apt-get -y install phpmyadmin
 
-sudo apt-get -y install python-pip libapache2-mod-wsgi
-sudo pip install django
-
-sudo pip install django-admin-bootstrapped
 # got error - use apt-get instead.......  sudo pip install mysql-python
 sudo apt-get  -y install python-mysqldb
 
@@ -76,14 +69,12 @@ sudo a2enmod rewrite
 # restart apache
 service apache2 restart
 
-# install git
-sudo apt-get -y install git
 
 # install Composer
 curl -s https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 
-sudo apt-get -y install mc
+#mkdir -p /var/www/html
 
 #
 date

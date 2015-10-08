@@ -15,11 +15,11 @@ fi
 
 # set defaults
 #
-mkdir -p _this-vamp203j
+mkdir -p _this-vamp203k
 #default_hostname="$(hostname)"
 userv="albe"
-default_hostname="vamp203j"
-default_domain="vamp203j.local"
+default_hostname="vamp203k"
+default_domain="vamp203k.local"
 
 mkdir -p tmp
 tmp="/home/$userv/tmp"

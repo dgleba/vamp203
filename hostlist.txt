@@ -1,0 +1,8 @@
+
+list of vamp203 builds
+
+
+vamp 203h  failed  i think guest additions.
+vamp 203i  hyperv
+vamp 203j  clean full install 462 success 2015-10-07 7pmish
+vamp 203k  test html perms 462 2015-10-08_Thu_18.20-PM
