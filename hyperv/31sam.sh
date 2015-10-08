@@ -1,5 +1,28 @@
 #!/usr/bin/env bash
 
+one() {
+
+#command | tee /path/to/logfile
+cd 
+tee ./1.txt <<EOF
+#
+#
+# works on vagrant ubuntu vm 2015-09-28_Mon_23.25-PM 
+# http://192.168.3.7:8985/django161c/admin/
+
+EOF
+
+#send variable to file
+t1=<<EOF
+#
+# t1
+# http://192.168.3.7:8985/django161c/admin/
+EOF
+#
+echo $t1 > ./2.txt
+
+}
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 saynow() {
@@ -15,10 +38,5 @@ zunused=1
 
 saynow
 set -x
-source ./11set.sh
-source ./12.sh
-source ./215dj.sh
-source ./25imp.sh
-source ./31sam.sh
-
+one
 date
