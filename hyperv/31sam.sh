@@ -2,24 +2,28 @@
 
 one() {
 
-#command | tee /path/to/logfile
-cd 
-tee ./1.txt <<EOF
-#
-#
-# works on vagrant ubuntu vm 2015-09-28_Mon_23.25-PM 
-# http://192.168.3.7:8985/django161c/admin/
+sudo apt-get -y install samba
 
+cd
+mkdir share1
+
+cat <<EOF >> /etc/samba/smb.conf
+# -------------------------------------------------------------------
+[share1]
+path = /home/dg/share1
+browsable =yes
+writable = yes
+guest ok = no
+read only = no
+valid users = dg
+# sudo smbpasswd -a dg
+# http://www.cyberciti.biz/tips/how-do-i-set-permissions-to-samba-shares.html
+# https://www.howtoforge.com/samba-server-ubuntu-14.04-lts
+#
 EOF
 
-#send variable to file
-t1=<<EOF
-#
-# t1
-# http://192.168.3.7:8985/django161c/admin/
-EOF
-#
-echo $t1 > ./2.txt
+sudo service smbd restart
+
 
 }
 
@@ -31,7 +35,7 @@ date
 
 offlinestuff()  {
 #exit 8
-zunused=1
+echo offline
 }
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

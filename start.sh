@@ -21,7 +21,6 @@ userv="albe"
 default_hostname="vamp203j"
 default_domain="vamp203j.local"
 
-
 mkdir -p tmp
 tmp="/home/$userv/tmp"
 
@@ -50,10 +49,9 @@ wget -N https://codeload.github.com/dgleba/vamp203/zip/master
 # unzip to destination.. unzip ~/share203/master -d ./sh
 unzip -u ./master
 cp -a vamp203-master shc
-cd shc
-#hmm not sure this is just files with no extension..
-find -type f -not -name "*.*" -exec chmod +x \{\} \;
-chmod -R +x *.sh
+# make files executable recursively
+chmod -R 755 ./shc
+chmod -R +x ./shc
 cd 
 
 

@@ -13,8 +13,15 @@ unzip -u ~/share203/master
 cp -a vamp203-master shc
 cd shc
 #hmm not sure this is just files with no extension..
-find -type f -not -name "*.*" -exec chmod +x \{\} \;
-chmod -R +x *.sh
+#find -type f -not -name "*.*" -exec chmod +x \{\} \;
+#no working..
+#chmod -R +x *.sh
+# make files executable recursively
+#find . -type f -exec chmod +x {} \;
+chmod -R 755 ./shc
+chmod -R +x ./shc
+
+
 
 }
 
