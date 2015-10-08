@@ -23,6 +23,9 @@ chmod +x ./18django203.sh
 chmod +x ./start.sh
 chmod +x ./tmp1.sh
 
+#set all files with no extension as executable
+find -type f -not -name "*.*" -exec chmod +x \{\} \;
+
 #
 date
 #
