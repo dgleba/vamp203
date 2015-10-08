@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
-one() {
+smb() {
 
 sudo apt-get -y install samba
+
+#backup server config...
+mkdir ~/backup
+cp /etc/samba/smb.conf /etc/samba/smb.conf.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
+cp /etc/samba/smb.conf    ~backup/smb.conf.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 
 cd
 mkdir share1
@@ -42,5 +47,5 @@ echo offline
 
 saynow
 set -x
-one
+smb
 date
