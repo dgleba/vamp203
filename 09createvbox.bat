@@ -10,9 +10,9 @@ set ymd=%date:~12,2%%date:~4,2%%date:~7,2%&set dhms=%date:~12,2%%date:~4,2%%date
 :set env variables... Edit these to your liking.
 :  vamp203f failed to install due to archive unreachable. i think permissions at work.
 : vamp203i used on hyperv 2015-10-07 - 10.4.10.250 - 00.15.5d.01.d2.61
-set vmname=vamp203h
+set vmname=vamp203j
 :set macaddvamp=08002795526A
-set macaddvamp=08002795527A
+set macaddvamp=08002795527B
 :
 set vboxm1="C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"
 set vboxm="%VBOX_MSI_INSTALL_PATH%VBoxManage"
