@@ -4,6 +4,7 @@
 #and
 #https://github.com/analytically/ubuntu-netboot-tftp/blob/master/preseed.cfg
 
+# basic from: http://searchitchannel.techtarget.com/feature/Performing-an-automated-Ubuntu-install-using-preseeding
 ## Options to set on the command line
 d-i debian-installer/locale string en_US
 d-i console-setup/ask_detect boolean false
