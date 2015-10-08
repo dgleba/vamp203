@@ -1,11 +1,17 @@
 #!/bin/bash
 set -x
 
-
 #Note: vbox shares are not available till it reboots after this start.sh script runs.
 #
 #David Gleba 2015-10-01 03:15PM
 
+#clear
+# check for root privilege
+if [ "$(id -u)" != "0" ]; then
+   echo " this script must be run as root" 1>&2
+   echo
+   exit 1
+fi
 
 # set defaults
 #
@@ -15,8 +21,12 @@ userv="albe"
 default_hostname="vamp203j"
 default_domain="vamp203j.local"
 
+
 mkdir -p tmp
-tmp="/home/$USER/tmp"
+tmp="/home/$userv/tmp"
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/12bootstrap203.sh -P ~
 wget -N https://raw.githubusercontent.com/dgleba/vamp203/master/15import203.sh -P ~
@@ -31,15 +41,25 @@ chmod +x ~/*.sh
 chmod +x ~/st2
 chmod +x ~/mntv
 
+#get the repo to a folder
+cd 
+wget -N https://codeload.github.com/dgleba/vamp203/zip/master
+#unzip [ -j junk paths - all in one folder ]  
+#rm -rf shc
+# unzip one folder...  unzip  ~/share203/master vamp203-master/hyperv/* -d ./sh
+# unzip to destination.. unzip ~/share203/master -d ./sh
+unzip -u ./master
+cp -a vamp203-master shc
+cd shc
+#hmm not sure this is just files with no extension..
+find -type f -not -name "*.*" -exec chmod +x \{\} \;
+chmod -R +x *.sh
+cd 
 
-#clear
 
-# check for root privilege
-if [ "$(id -u)" != "0" ]; then
-   echo " this script must be run as root" 1>&2
-   echo
-   exit 1
-fi
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 
 # define download function
 # courtesy of http://fitnr.com/showing-file-download-progress-using-wget.html
