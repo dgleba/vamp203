@@ -7,7 +7,8 @@
 get1
 {
 
-curl --digest --user dgleba:calculat https://bitbucket.org/dgleba/vamp198e/get/master.zip -o vamp198e.zip
+worked...
+curl --digest --user dgleba:x123za https://bitbucket.org/dgleba/vamp198e/get/master.zip -o vamp198e.zip
 
 192.168.88.86
 
