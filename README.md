@@ -10,7 +10,7 @@ I am doing this on a Windows machine. (I used a Vagrant Ubuntu machine running i
 - Install virtualbox
 - create unattended ubuntu 14.04 server iso ( I used a vagrant Ubuntu VM to create it. vamp198e)   
       See instructions for unattended iso maker below...   
-	    vagrant share..   config.vm.synced_folder "/var/varvamp", "/var/varvamp"
+	    vagrant share...   config.vm.synced_folder "/var/varvamp", "/var/varvamp"
       I used `03prep-iso.sh`  
 - create the virtual box  ( I did this from windows)  
   `09createvbox.bat`  
