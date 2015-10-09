@@ -14,6 +14,7 @@ cp /etc/samba/smb.conf    ~backup/smb.conf.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z
 
 cd
 mkdir webwork
+mkdir /var/www/html
 
 cat <<EOF >> /etc/samba/smb.conf
 # -------------------------------------------------------------------
