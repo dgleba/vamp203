@@ -69,9 +69,8 @@ if ! grep -q "noninteractive" /proc/cmdline ; then
     read -ep " please enter the username you are currently logged in as: " -i "$userv" userv
     read -ep " please enter your preferred hostname: " -i "$default_hostname" hostname
     read -ep " please enter your preferred domain: " -i "$default_domain" domain
-
-    # ask whether to add puppetlabs repositories
-   
+ 
+  
 fi
 
 # print status message
