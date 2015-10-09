@@ -11,6 +11,8 @@ cd C:\n\Dropbox\csd\serve\vagrantyard\vamp198e
 SET _prefix=%COMPUTERNAME:~0,5% 
 IF %_prefix%==REDWE  cd C:\n\Dropbox\csd\serve\vagrantyard\vamp198f
 
+timeout 7
+
 vagrant up
 
 timeout 99
