@@ -146,7 +146,7 @@ echo en > $tmp/iso_new/isolinux/lang
 # set late command
 #http://serverfault.com/questions/560150/how-to-include-additional-software-in-preseed-cfg-for-ubuntu-server-13-10
 late_command="chroot /target wget -N -O /home/$username/start.sh https://github.com/dgleba/vamp203/raw/master/start.sh ;\
-    chroot /target chmod +x /home/$username/start.sh ; chroot apt-get install openssh-server samba apache2 php5 ;"
+    chroot /target chmod +x /home/$username/start.sh ; chroot apt-get -y install openssh-server samba apache2 php5 ;"
 
 # copy the netson seed file to the iso
 cp -rT $tmp/$seed_file $tmp/iso_new/preseed/$seed_file
