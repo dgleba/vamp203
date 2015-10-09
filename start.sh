@@ -111,7 +111,7 @@ apt-get -y purge
 
 apt-get -y install mc
 apt-get -y install locate
-apt-get -y install openssh-server 
+apt-get -y install openssh-server samba apache2 php5 
 
 #backup ssh server config...
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
