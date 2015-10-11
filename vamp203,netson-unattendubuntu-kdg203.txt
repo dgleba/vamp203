@@ -1,4 +1,100 @@
+_____________
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+http://unix.stackexchange.com/questions/139089/how-to-read-first-and-last-line-from-cat-output
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Title:  .
+-----------------------2015-10-10[Oct-Sat]11-43AM
+
+On Debian and probably others, install winbind:
+http://superuser.com/questions/17458/smbmount-fails-to-resolve-hostnames-address
+
+_____________
+
+
+get ip address of windows share host by name...
+
+http://stackoverflow.com/questions/427979/how-do-you-extract-ip-addresses-from-files-using-a-regex-in-a-linux-shell
+works:
+nmblookup -S red5a | grep -E -o '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'  | head -n1
+
+
+
+
+http://bhfsteve.blogspot.ca/2014/07/embedding-python-in-bash-scripts.html
+
+python get ipaddress from string.
+http://stackoverflow.com/questions/23934425/bash-parse-ifconfig-to-get-only-my-ip-address
+
+http://stackoverflow.com/questions/24851449/extract-ip-address-from-variable-string
+
+==
+
+noworks..
+dg@redex164:~$ sudo mount -t cifs //192.168.88.84/c ~/mnt -o username=WORKGROUP/dg,password=h
+mount error(13): Permission denied
+Refer to the mount.cifs(8) manual page (e.g. man mount.cifs)
+
+works...
+dg@redex164:~$ sudo mount -t cifs //192.168.88.84/c ~/mnt -o username=dg,password=h
+dg@redex164:~$ nmblookup -S red5a
+192.168.88.84 red5a<00>
+Looking up status of 192.168.88.84
+	RED5A           <20> -         B <ACTIVE> 
+	RED5A           <00> -         B <ACTIVE> 
+	WORKGROUP       <00> - <GROUP> B <ACTIVE> 
+	WORKGROUP       <1e> - <GROUP> B <ACTIVE> 
+
+	MAC Address = 88-53-2E-D4-6C-CD
+
+dg@redex164:~$ 
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Title:  .
+-----------------------2015-10-10[Oct-Sat]11-43AM
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+==
+
+http://stackoverflow.com/questions/24851449/extract-ip-address-from-variable-string
+
+==
+
+
+smbclient -L
+sudo apt-get -y install smbclient cifs-utils
+
+ nmblookup -S WORKGROUP
+ nmblookup -S REDWE
+ 
+albe@vamp203h:~$ sudo mount -t cifs  //REDWE/var ~/tmp  -o user=WORKGROUP/dg%h
+sudo: unable to resolve host vamp203h
+mount error: could not resolve address for REDWE: Unknown error
+albe@vamp203h:~$
+
+sudo mount -t cifs  //REDWE/var/ ~/tmp/  -o user=WORKGROUP/dg%h
+sudo mount -t cifs  //REDWE/var/ ~/tmp/  -o user=WORKGROUP/dg%h
+sudo mount -t cifs  //redwe/var/ ~/tmp/  -o user=WORKGROUP/dg%h
+sudo mount -t cifs  //REDEX164/share1 ~/tmp/ 
+
+albe@vamp203j:~$ sudo mount -t cifs  \\REDEX164\share1 ~/tmp/
+mount.cifs: bad UNC (\REDEX164share1)
+albe@vamp203j:~$ sudo mount -t cifs  //REDEX164/share1 ~/tmp/
+mount error: could not resolve address for REDEX164: Unknown error
+albe@vamp203j:~$
+
+
+
+ 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Title:  .
 -----------------------2015-10-08[Oct-Thu]20-38PM
