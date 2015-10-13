@@ -158,6 +158,7 @@ cp /etc/fstab ~/backup/fstab.bak$(date +"__%Y-%m-%d_%a_%k.%M.%S-%Z")
 #not working yet...
 echo "html      /var/www/html  vboxsf   defaults,noauto  0   0" >> /etc/fstab
 echo "share203  /home/$userv/share203  vboxsf   defaults,noauto  0   0" >> /etc/fstab
+#echo "varvamp  /var/varvamp  vboxsf   defaults,noauto  0   0" >> /etc/fstab
 
 #create upstart for mounting shared folders...
 sudo tee /etc/init/mountvshare.conf <<EOF
@@ -172,6 +173,7 @@ script
     sleep 8
     mount html
     mount share203
+	#mount varvamp
 
 end script
 

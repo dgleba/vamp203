@@ -2,7 +2,12 @@
 list of vamp203 builds
 
 
+vamp 203f  failed to install due to archive unreachable. i think permissions at work.
 vamp 203h  failed  i think guest additions.
+
 vamp 203i  hyperv
+vamp 203i  used on hyperv 2015-10-07 - 10.4.10.250 - 00.15.5d.01.d2.61
+
 vamp 203j  clean full install 462 success 2015-10-07 7pmish
 vamp 203k  test html perms 462 2015-10-08_Thu_18.20-PM
+
