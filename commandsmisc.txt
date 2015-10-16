@@ -16,6 +16,8 @@ curl --digest --user dgleba:x123za https://bitbucket.org/dgleba/vamp198e/get/mas
 
 192.168.88.86
 
+
+
 }
 
 #
@@ -40,6 +42,10 @@ cd
 rm -rf sh
 unzip  ~/share203/master vamp203-master/* -d ./sh
 
+echo "David Gleba" >> contributors.txt
+git add contributors.txt
+git commit -m 'Initial commit with contributors'
+git push -u origin master
 
 }
 
