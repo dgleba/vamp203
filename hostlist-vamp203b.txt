@@ -1,6 +1,7 @@
 
 list of vamp203 builds
 
+vamp 203	reserved for the last vamp203. not used yet.
 
 vamp 203f  failed to install due to archive unreachable. i think permissions at work.
 vamp 203h  failed  i think guest additions.
